@@ -27,6 +27,41 @@ const SERVICES = [
   { id: "04", icon: "📊", title: "Business Dashboard", sub: "Know your numbers", desc: "See your sales, top customers, and best products in real-time. Make decisions that grow your profit every week.", color: "#FFD700" },
 ];
 
+const SERVICE_DETAILS = [
+  {
+    icon: "⚡", title: "Your Shop Website", color: "#00FF88",
+    tagline: "Your shop is open 24/7 — even when you're not.",
+    what: "We build a complete, professional website for your shop that ranks on Google and looks stunning on every device.",
+    includes: ["Custom homepage with your branding & logo", "Products / menu page with photos & prices", "Google Maps integration so customers find you easily", "WhatsApp order button on every page", "Contact & directions page", "Mobile-first — looks perfect on all phones", "SEO optimized — shows up on Google search", "Fast loading — under 2 seconds"],
+    result: "Customers find your shop on Google before they even leave home. Your shop works for you 24/7.",
+    time: "Live in 24 hours",
+  },
+  {
+    icon: "📱", title: "Mobile App", color: "#00D4FF",
+    tagline: "Your brand in every customer's pocket.",
+    what: "A fully branded mobile app for your shop on Android and iOS. Customers can order, track, and stay connected with your business directly.",
+    includes: ["Branded app with your shop name & logo", "Product catalogue with images & pricing", "One-tap ordering & cart system", "Real-time order tracking for customers", "Push notifications for offers & updates", "Loyalty points & rewards system", "Customer order history", "Available on Google Play & App Store"],
+    result: "Customers order from you directly — no middleman, no commission cuts. Your app, your brand, your profit.",
+    time: "Ready in 7 days",
+  },
+  {
+    icon: "📣", title: "Smart Marketing", color: "#B57BFF",
+    tagline: "Stop waiting for customers. Go get them.",
+    what: "We run targeted digital ads and manage your social media so real customers near your shop discover you every single day.",
+    includes: ["Google Ads targeting people near your shop", "Instagram & Facebook ads with real photos", "WhatsApp broadcast campaigns", "Weekly content for your social pages", "Google Business Profile setup & optimization", "Monthly performance report", "Festival & seasonal offer campaigns", "Competitor analysis for your area"],
+    result: "More footfall, more orders, more revenue — consistently. You focus on your shop, we bring the customers.",
+    time: "Campaigns live in 48 hours",
+  },
+  {
+    icon: "📊", title: "Business Dashboard", color: "#FFD700",
+    tagline: "Know your business. Grow your business.",
+    what: "A real-time dashboard showing everything in your business — sales, customers, top products, and growth trends — all in one place.",
+    includes: ["Live sales tracker — today, week, month", "Top selling products report", "Customer database — who orders most", "Order history & invoice generation", "Low stock alerts", "Revenue vs last month comparison", "Customer feedback & ratings", "Accessible from mobile & desktop"],
+    result: "Stop guessing. Know exactly what's working and where your next rupee of profit is coming from.",
+    time: "Set up in 24 hours",
+  },
+];
+
 export default function PsidoLanding() {
   const [mouse, setMouse] = useState({ x: -100, y: -100 });
   const [scrollY, setScrollY] = useState(0);
@@ -34,6 +69,7 @@ export default function PsidoLanding() {
   const [activeBA, setActiveBA] = useState(0);
   const [glitch, setGlitch] = useState(false);
   const [videoModalOpen, setVideoModalOpen] = useState(false);
+  const [serviceModal, setServiceModal] = useState<number | null>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const rafRef = useRef<number>(0);
   const cursorRef = useRef<HTMLDivElement>(null);
@@ -360,7 +396,27 @@ export default function PsidoLanding() {
         .wa-close { width:100%; background:transparent; border:none; border-top:1px solid var(--border); padding:14px; font-family:'Orbitron',monospace; font-size:10px; color:var(--muted); letter-spacing:0.2em; text-transform:uppercase; text-align:center; transition:color 0.2s; }
         .wa-close:hover { color:var(--text); }
 
-        /* VIDEO MODAL */
+        /* SERVICE MODAL */
+        .svc-modal-overlay { position:fixed; inset:0; z-index:7000; background:rgba(2,4,8,0.92); backdrop-filter:blur(12px); display:flex; align-items:center; justify-content:center; padding:40px 20px; }
+        .svc-modal { background:#06080F; border:1px solid var(--border); width:100%; max-width:680px; max-height:88vh; overflow-y:auto; position:relative; clip-path:polygon(0 0,calc(100% - 28px) 0,100% 28px,100% 100%,28px 100%,0 calc(100% - 28px)); animation:popUp 0.3s cubic-bezier(0.34,1.56,0.64,1) both; scrollbar-width:thin; scrollbar-color:rgba(0,255,136,0.2) transparent; }
+        .svc-modal::before { content:''; position:absolute; top:0; right:0; width:0; height:0; border-left:28px solid transparent; border-top:28px solid rgba(0,255,136,0.15); }
+        .svc-modal-hdr { padding:36px 40px 24px; border-bottom:1px solid var(--border); position:sticky; top:0; background:#06080F; z-index:1; }
+        .svc-modal-icon { font-size:40px; margin-bottom:12px; display:block; }
+        .svc-modal-title { font-family:'Orbitron',monospace; font-size:22px; font-weight:900; margin-bottom:6px; }
+        .svc-modal-tagline { font-size:14px; color:var(--muted); font-weight:300; font-style:italic; }
+        .svc-modal-close { position:absolute; top:20px; right:20px; background:transparent; border:1px solid var(--border); color:var(--muted); width:36px; height:36px; border-radius:50%; font-size:16px; display:flex; align-items:center; justify-content:center; transition:all 0.2s; }
+        .svc-modal-close:hover { border-color:var(--green); color:var(--green); box-shadow:0 0 16px rgba(0,255,136,0.3); }
+        .svc-modal-body { padding:32px 40px 40px; }
+        .svc-modal-sect { margin-bottom:28px; }
+        .svc-modal-sect-lbl { font-family:'Orbitron',monospace; font-size:9px; letter-spacing:0.35em; text-transform:uppercase; margin-bottom:12px; opacity:0.6; }
+        .svc-modal-what { font-size:15px; color:var(--text); line-height:1.8; font-weight:300; }
+        .svc-modal-list { list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+        .svc-modal-list li { font-size:13px; color:var(--muted); display:flex; align-items:flex-start; gap:8px; line-height:1.5; }
+        .svc-modal-list li::before { content:'✓'; font-weight:700; flex-shrink:0; margin-top:1px; }
+        .svc-modal-result { background:rgba(0,255,136,0.04); border:1px solid rgba(0,255,136,0.15); padding:20px 24px; font-size:14px; color:var(--text); line-height:1.7; font-weight:300; }
+        .svc-modal-time { display:inline-flex; align-items:center; gap:8px; font-family:'Orbitron',monospace; font-size:11px; font-weight:700; letter-spacing:0.15em; margin-bottom:24px; }
+        .svc-modal-time-dot { width:8px; height:8px; border-radius:50%; animation:orbP 2s ease-in-out infinite; }
+        .svc-modal-cta { width:100%; margin-top:28px; }
         .vid-modal-overlay { position:fixed; inset:0; z-index:8000; background:rgba(2,4,8,0.95); display:flex; align-items:center; justify-content:center; padding:40px; }
         .vid-modal { background:var(--bg2); border:1px solid var(--border); padding:40px; max-width:700px; width:100%; text-align:center; position:relative; }
         .vid-modal-close { position:absolute; top:16px; right:16px; background:transparent; border:none; color:var(--muted); font-size:20px; transition:color 0.2s; }
@@ -422,6 +478,48 @@ export default function PsidoLanding() {
               </button>
             ))}
             <button className="wa-close" onClick={() => setWaOpen(false)}>✕ &nbsp; Close</button>
+          </div>
+        </div>
+      )}
+
+      {/* SERVICE MODAL */}
+      {serviceModal !== null && (
+        <div className="svc-modal-overlay" onClick={() => setServiceModal(null)}>
+          <div className="svc-modal" onClick={e => e.stopPropagation()}>
+            <div className="svc-modal-hdr" style={{ borderTop: `3px solid ${SERVICE_DETAILS[serviceModal].color}` }}>
+              <button className="svc-modal-close" onClick={() => setServiceModal(null)}>✕</button>
+              <span className="svc-modal-icon">{SERVICE_DETAILS[serviceModal].icon}</span>
+              <div className="svc-modal-title" style={{ color: SERVICE_DETAILS[serviceModal].color }}>{SERVICE_DETAILS[serviceModal].title}</div>
+              <div className="svc-modal-tagline">{SERVICE_DETAILS[serviceModal].tagline}</div>
+            </div>
+            <div className="svc-modal-body">
+              <div className="svc-modal-sect">
+                <div className="svc-modal-sect-lbl" style={{ color: SERVICE_DETAILS[serviceModal].color }}>What You Get</div>
+                <div className="svc-modal-what">{SERVICE_DETAILS[serviceModal].what}</div>
+              </div>
+              <div className="svc-modal-sect">
+                <div className="svc-modal-sect-lbl" style={{ color: SERVICE_DETAILS[serviceModal].color }}>Everything Included</div>
+                <ul className="svc-modal-list" style={{ "--check-color": SERVICE_DETAILS[serviceModal].color } as React.CSSProperties}>
+                  {SERVICE_DETAILS[serviceModal].includes.map((item, i) => (
+                    <li key={i} style={{ "--check-color": SERVICE_DETAILS[serviceModal].color } as React.CSSProperties}>
+                      <span style={{ color: SERVICE_DETAILS[serviceModal].color }}>✓</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="svc-modal-sect">
+                <div className="svc-modal-sect-lbl" style={{ color: SERVICE_DETAILS[serviceModal].color }}>The Result</div>
+                <div className="svc-modal-result">{SERVICE_DETAILS[serviceModal].result}</div>
+              </div>
+              <div className="svc-modal-time" style={{ color: SERVICE_DETAILS[serviceModal].color }}>
+                <div className="svc-modal-time-dot" style={{ background: SERVICE_DETAILS[serviceModal].color, boxShadow: `0 0 10px ${SERVICE_DETAILS[serviceModal].color}` }} />
+                {SERVICE_DETAILS[serviceModal].time}
+              </div>
+              <button className="btn-primary svc-modal-cta" onClick={() => { setServiceModal(null); setWaOpen(true); }}>
+                <span>💬 &nbsp;Get This For My Shop</span>
+              </button>
+            </div>
           </div>
         </div>
       )}
@@ -582,7 +680,7 @@ export default function PsidoLanding() {
               <h3 className="svc-ttl">{s.title}</h3>
               <div className="svc-sub" style={{ color: s.color }}>{s.sub}</div>
               <p className="svc-dsc">{s.desc}</p>
-              <div className="svc-cta" style={{ color: s.color }}>
+              <div className="svc-cta" style={{ color: s.color }} onClick={() => setServiceModal(i)}>
                 Learn More <span style={{ transition: "transform 0.3s" }}>→</span>
               </div>
             </div>

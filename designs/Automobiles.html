@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AUTOMOBILE_DIVISION | COMPANY_GROUP</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background: url("cars_bg.jpg") center/cover no-repeat fixed;
+color:white;
+}
+
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:#0a0a0a;
+border-bottom:1px solid #333;
+}
+
+nav h1{
+margin:0;
+color:#e63946;
+}
+
+nav a{
+margin-left:20px;
+text-decoration:none;
+color:white;
+}
+
+/* HERO */
+
+.hero{
+height:70vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.8)), url("car-hero.jpg") center/cover no-repeat;
+}
+
+.hero h2{
+font-size:50px;
+margin-bottom:10px;
+}
+
+.hero p{
+max-width:600px;
+color:#ccc;
+}
+
+/* SECTION */
+
+.section{
+padding:80px 8%;
+}
+
+.section h2{
+text-align:center;
+margin-bottom:50px;
+color:#e63946;
+}
+
+/* CAR GRID */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
+
+.car{
+background:#1a1c21;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,.4);
+transition:.3s;
+}
+
+.car:hover{
+transform:translateY(-8px);
+}
+
+.car img{
+width:100%;
+}
+
+.car-content{
+padding:20px;
+}
+
+.car-content h3{
+margin-top:0;
+}
+
+.price{
+color:#e63946;
+font-weight:bold;
+margin:10px 0;
+}
+
+/* BUTTON */
+
+.btn{
+display:inline-block;
+padding:10px 18px;
+background:#e63946;
+color:white;
+text-decoration:none;
+border-radius:5px;
+}
+
+/* SERVICES */
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+.service{
+background:#1a1c21;
+padding:25px;
+border-radius:8px;
+text-align:center;
+}
+
+/* FOOTER */
+
+footer{
+background:#0a0a0a;
+text-align:center;
+padding:25px;
+color:#aaa;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<nav>
+
+<h1>AUTOMOBILE_DIVISION</h1>
+
+<div>
+<a href="index.html">Home</a>
+<a href="#vehicles">Vehicles</a>
+<a href="#services">Services</a>
+<a href="#contact">Contact</a>
+</div>
+
+</nav>
+
+
+<section class="hero">
+
+<h2>Premium Automotive Solutions</h2>
+<p>High-performance vehicles and professional automotive services.</p>
+
+</section>
+
+
+
+<section id="vehicles" class="section">
+
+<h2>Featured Vehicles</h2>
+
+<div class="grid">
+
+<div class="car">
+<img src="car1.jpg">
+<div class="car-content">
+<h3>MODEL_NAME</h3>
+<div class="price">₹PRICE</div>
+<p>Short vehicle description.</p>
+<a class="btn">Details</a>
+</div>
+</div>
+
+<div class="car">
+<img src="car2.jpg">
+<div class="car-content">
+<h3>MODEL_NAME</h3>
+<div class="price">₹PRICE</div>
+<p>Short vehicle description.</p>
+<a class="btn">Details</a>
+</div>
+</div>
+
+<div class="car">
+<img src="car3.jpg">
+<div class="car-content">
+<h3>MODEL_NAME</h3>
+<div class="price">₹PRICE</div>
+<p>Short vehicle description.</p>
+<a class="btn">Details</a>
+</div>
+</div>
+
+</div>
+
+</section>
+
+
+
+<section id="services" class="section">
+
+<h2>Our Services</h2>
+
+<div class="services">
+
+<div class="service">
+<h3>Vehicle Sales</h3>
+<p>New and pre-owned automobiles.</p>
+</div>
+
+<div class="service">
+<h3>Maintenance</h3>
+<p>Professional servicing and repairs.</p>
+</div>
+
+<div class="service">
+<h3>Financing</h3>
+<p>Flexible vehicle financing options.</p>
+</div>
+
+<div class="service">
+<h3>Insurance</h3>
+<p>Vehicle insurance assistance.</p>
+</div>
+
+</div>
+
+</section>
+
+
+
+<section id="contact" class="section">
+
+<h2 style="text-align:center">Contact</h2>
+
+<p style="text-align:center;color:#ccc">
+
+Division Name: AUTOMOBILE_DIVISION<br>
+Company: COMPANY_GROUP<br>
+Address: ADDRESS_PLACEHOLDER<br>
+Email: EMAIL_PLACEHOLDER<br>
+Phone: PHONE_PLACEHOLDER
+
+</p>
+
+</section>
+
+
+
+<footer>
+
+© YEAR_PLACEHOLDER | COMPANY_GROUP Automotive Division
+
+</footer>
+
+
+</body>
+</html>

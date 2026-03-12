@@ -1,6 +1,5 @@
 // lib/supabase.ts
-// Using standard PostgreSQL queries via Supabase JS client
-// Easy to migrate to AWS RDS later — just swap this file with a pg/postgres client
+// Standard PostgreSQL via Supabase — easy AWS RDS migration later
 
 import { createClient } from '@supabase/supabase-js';
 
@@ -9,7 +8,7 @@ const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 
 export const supabase = createClient(supabaseUrl, supabaseKey);
 
-// ─── CLIENT TYPES ────────────────────────────────────────────────────────────
+// ─── TYPES ────────────────────────────────────────────────────────────────────
 export type Plan = 'Basic' | 'Standard' | 'Premium';
 export type Status = 'Active' | 'Pending' | 'Paused';
 export type PayStatus = 'Paid' | 'Due' | 'Overdue';
@@ -33,9 +32,18 @@ export interface Client {
   updated_at?: string;
 }
 
-// ─── DB FUNCTIONS ─────────────────────────────────────────────────────────────
-// These functions use standard SQL patterns — easy to replace with pg queries on AWS
+export interface ActivityLog {
+  id: string;
+  action: string;
+  entity: string;
+  entity_name: string;
+  details: string;
+  performed_by: string;
+  ip_address: string;
+  created_at: string;
+}
 
+// ─── CLIENT FUNCTIONS ─────────────────────────────────────────────────────────
 export async function getClients(): Promise<Client[]> {
   const { data, error } = await supabase
     .from('clients')
@@ -72,4 +80,52 @@ export async function deleteClient(id: string): Promise<void> {
     .delete()
     .eq('id', id);
   if (error) throw error;
+}
+
+// ─── PASSWORD FUNCTIONS ───────────────────────────────────────────────────────
+export async function verifyPassword(password: string): Promise<boolean> {
+  const { data, error } = await supabase
+    .from('admin_settings')
+    .select('value')
+    .eq('key', 'admin_password')
+    .single();
+  if (error) return password === 'psido@2025'; // fallback
+  return data.value === password;
+}
+
+export async function changePassword(newPassword: string): Promise<void> {
+  const { error } = await supabase
+    .from('admin_settings')
+    .update({ value: newPassword, updated_at: new Date().toISOString() })
+    .eq('key', 'admin_password');
+  if (error) throw error;
+}
+
+// ─── ACTIVITY LOG FUNCTIONS ───────────────────────────────────────────────────
+export async function logActivity(
+  action: string,
+  entity: string,
+  entityName: string,
+  details: string,
+  performedBy: string
+): Promise<void> {
+  await supabase.from('activity_logs').insert([{
+    action,
+    entity,
+    entity_name: entityName,
+    details,
+    performed_by: performedBy,
+    ip_address: 'web',
+  }]);
+  // Fire and forget — don't block on log failure
+}
+
+export async function getActivityLogs(limit = 50): Promise<ActivityLog[]> {
+  const { data, error } = await supabase
+    .from('activity_logs')
+    .select('*')
+    .order('created_at', { ascending: false })
+    .limit(limit);
+  if (error) throw error;
+  return data || [];
 }

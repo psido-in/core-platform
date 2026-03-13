@@ -66,7 +66,7 @@ export default function AdminLogin() {
           <form onSubmit={handleLogin}>
             <div className="field">
               <label className="label">Username</label>
-              <input className="input" type="text" placeholder="partha or friend" value={username} onChange={e => setUsername(e.target.value)} required autoComplete="username" />
+              <input className="input" type="text" placeholder="Partha or Sandeep" value={username} onChange={e => setUsername(e.target.value)} required autoComplete="username" />
             </div>
             <div className="field">
               <label className="label">Password</label>

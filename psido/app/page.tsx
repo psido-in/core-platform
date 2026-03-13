@@ -650,7 +650,7 @@ export default function PsidoLanding() {
       {/* FOOTER */}
       <footer>
         <div className="f-logo"><img src="/psido-logo.png" alt="Psido" /><div className="f-brand">PSIDO</div></div>
-        <div className="f-tag">Grow Together // Bangalore 2025</div>
+        <div className="f-tag">Grow Together // Bangalore 2026</div>
         <div className="f-links"><a href="#">Privacy</a><a href="#">Terms</a><a href="#contact">Contact</a></div>
       </footer>
 

@@ -1,23 +1,17 @@
-// lib/supabase.ts
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 
-let _supabase: SupabaseClient | null = null;
+let _client: SupabaseClient | null = null;
 
 function getSupabase(): SupabaseClient {
-  if (_supabase) return _supabase;
+  if (_client) return _client;
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   if (!url || !key) throw new Error('Supabase env vars missing');
-  _supabase = createClient(url, key);
-  return _supabase;
+  _client = createClient(url.trim(), key.trim());
+  return _client;
 }
 
-// Export for realtime subscriptions
-export function getSupabaseClient(): SupabaseClient | null {
-  try { return getSupabase(); } catch { return null; }
-}
-
-// ─── TYPES ───────────────────────────────────────────────────────────────────
+// ─── TYPES ───────────────────────────────────────────
 export type Plan = 'Basic' | 'Standard' | 'Premium';
 export type Status = 'Active' | 'Pending' | 'Paused';
 export type PayStatus = 'Paid' | 'Due' | 'Overdue';
@@ -41,7 +35,51 @@ export interface Client {
   updated_at?: string;
 }
 
-// ─── CLIENT FUNCTIONS ─────────────────────────────────────────────────────────
+export interface ActivityLog {
+  id: string;
+  action: string;
+  entity_name: string;
+  details: string;
+  performed_by: string;
+  created_at: string;
+}
+
+// ─── AUTH ────────────────────────────────────────────
+export async function verifyLogin(username: string, password: string): Promise<boolean> {
+  const { data, error } = await getSupabase()
+    .from('admin_users')
+    .select('id')
+    .eq('username', username.toLowerCase().trim())
+    .eq('password', password)
+    .single();
+  if (error) return false;
+  return !!data;
+}
+
+export async function changePassword(username: string, newPassword: string): Promise<void> {
+  const { error } = await getSupabase()
+    .from('admin_users')
+    .update({ password: newPassword })
+    .eq('username', username.toLowerCase().trim());
+  if (error) throw error;
+}
+
+// ─── ACTIVITY LOGS ───────────────────────────────────
+export async function logActivity(action: string, entityName: string, details: string, performedBy: string): Promise<void> {
+  await getSupabase().from('activity_logs').insert([{ action, entity_name: entityName, details, performed_by: performedBy }]);
+}
+
+export async function getActivityLogs(): Promise<ActivityLog[]> {
+  const { data, error } = await getSupabase()
+    .from('activity_logs')
+    .select('*')
+    .order('created_at', { ascending: false })
+    .limit(100);
+  if (error) throw error;
+  return data || [];
+}
+
+// ─── CLIENTS ─────────────────────────────────────────
 export async function getClients(): Promise<Client[]> {
   const { data, error } = await getSupabase()
     .from('clients').select('*').order('created_at', { ascending: false });

@@ -2,7 +2,7 @@
 export const dynamic = 'force-dynamic';
 import { useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/navigation";
-import { supabase, getClients, addClient, updateClient, deleteClient } from "../../../lib/supabase";
+import { getClients, addClient, updateClient, deleteClient } from "../../../lib/supabase";
 import type { Client, Plan, Status, PayStatus } from "../../../lib/supabase";
 
 const EMPTY: Omit<Client, "id" | "created_at" | "updated_at"> = {
@@ -51,13 +51,7 @@ export default function Dashboard() {
 
   useEffect(() => { loadClients(); }, [loadClients]);
 
-  // Real-time sync — both founders see updates instantly
-  useEffect(() => {
-    const channel = supabase.channel("clients_realtime")
-      .on("postgres_changes", { event: "*", schema: "public", table: "clients" }, () => loadClients())
-      .subscribe();
-    return () => { supabase.removeChannel(channel); };
-  }, [loadClients]);
+
 
   const logout = () => { localStorage.removeItem("psido_admin"); router.push("/admin"); };
 

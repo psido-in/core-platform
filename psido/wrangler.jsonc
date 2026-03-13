@@ -7,10 +7,5 @@
   },
   "compatibility_flags": [
     "nodejs_compat"
-  ],
-  "vars": {
-    "NEXT_PUBLIC_SUPABASE_URL": "https://ukoipqvaotcetivmvzrk.supabase.co",
-    "NEXT_PUBLIC_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVrb2lwcXZhb3RjZXRpdm12enJrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyMzYwNjQsImV4cCI6MjA4ODgxMjA2NH0.WZHyGo7s4oQByzYezd4mtg7ENLzYgyWjh5aFGQZGZQ4
-SUPABASE_SERVICE_ROLE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVrb2lwcXZhb3RjZXRpdm12enJrIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3MzIzNjA2NCwiZXhwIjoyMDg4ODEyMDY0fQ.h_Ej1LpDXHVYiTsr7idZazDzk01r8mMyoJu4RM_tdlU"
-  }
+  ]
 }

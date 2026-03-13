@@ -1,17 +1,21 @@
 // lib/supabase.ts
-import { createClient } from '@supabase/supabase-js';
+import { createClient, SupabaseClient } from '@supabase/supabase-js';
 
-// Lazy init — only creates client when actually called, not at build time
-function getSupabase() {
+let _supabase: SupabaseClient | null = null;
+
+function getSupabase(): SupabaseClient {
+  if (_supabase) return _supabase;
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   if (!url || !key) throw new Error('Supabase env vars missing');
-  return createClient(url, key);
+  _supabase = createClient(url, key);
+  return _supabase;
 }
 
-export const supabase = (() => {
-  try { return getSupabase(); } catch { return null as never; }
-})();
+// Export for realtime subscriptions
+export function getSupabaseClient(): SupabaseClient | null {
+  try { return getSupabase(); } catch { return null; }
+}
 
 // ─── TYPES ───────────────────────────────────────────────────────────────────
 export type Plan = 'Basic' | 'Standard' | 'Premium';

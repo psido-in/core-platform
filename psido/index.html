@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -523,7 +523,15 @@
                     </div>
                     
                     <div class="contact-form-container reveal-fade-left">
-                        <form class="contact-form" onsubmit="event.preventDefault(); alert('Form successfully submitted! We will contact you soon.');">
+                        <div id="formSuccessMessage" style="display: none; text-align: center; padding: 2rem 0;">
+                            <div class="success-icon" style="font-size: 4rem; color: var(--primary); margin-bottom: 1.5rem;">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <h3 style="color: white; margin-bottom: 1rem;">Enquiry Sent!</h3>
+                            <p style="color: var(--dark-text-muted);">Thanks, we'll get back to you soon.</p>
+                            <button type="button" class="btn btn-outline mt-4" onclick="location.reload();">Send Another Message</button>
+                        </div>
+                        <form id="enquiryForm" class="contact-form">
                             <h3>Send an Enquiry Message</h3>
                             <div class="form-group">
                                 <label for="name">Full Name</label>

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   PSIDO AGENCY - PREMIUM HYBRID CSS
+   PSIDO AGENCY  - PREMIUM HYBRID CSS
    ========================================================================== */
 
 /* --- CSS Variables --- */
@@ -815,4 +815,31 @@ img {
   .cta-title { font-size: 2rem; }
   
   .contact-form-container { padding: 2rem 1.5rem; }
+}
+
+@media (max-width: 576px) {
+  .top-contact-bar { text-align: center; font-size: 0.75rem; }
+  .top-contact-bar .container { display: flex; flex-direction: column; gap: 5px; }
+  .hero-title { font-size: 2rem; }
+  .hero-subtitle { font-size: 1rem; }
+  
+  /* Scale down the SVG background elements on mobile */
+  #scrollScene g[id^="scene-"] {
+    transform-origin: center;
+    scale: 0.7;
+  }
+}
+
+/* --- Form Success Message Styling --- */
+#formSuccessMessage {
+  transition: opacity 0.5s ease-in;
+}
+.success-icon i {
+  animation: bounceIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0); opacity: 0; }
+  60% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); }
 }

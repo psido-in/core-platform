@@ -1,5 +1,5 @@
 /**
- * PSIDO AGENCY - MAIN SCRIPT
+ * PSIDO AGENCY  - MAIN SCRIPT
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -339,6 +339,51 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Trigger initial calculation
         setTimeout(() => window.dispatchEvent(new Event('scroll')), 100);
+    }
+
+    // 9. WhatsApp Form Submission
+    const enquiryForm = document.getElementById('enquiryForm');
+    const formSuccessMessage = document.getElementById('formSuccessMessage');
+
+    if (enquiryForm) {
+        enquiryForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const requirement = document.getElementById('requirement').value;
+            
+            // Receiver Phone Number (Assumed from contact info)
+            const receiverNumber = '919148547599'; 
+            
+            // Build the message
+            const message = `*New Enquiry from Psido Website*%0A%0A` +
+                            `*Name:* ${encodeURIComponent(name)}%0A` +
+                            `*Phone:* ${encodeURIComponent(phone)}%0A` +
+                            `*Requirement:* %0A${encodeURIComponent(requirement)}`;
+            
+            // Create WhatsApp URL
+            const whatsappUrl = `https://wa.me/${receiverNumber}?text=${message}`;
+            
+            // Open WhatsApp in new tab
+            window.open(whatsappUrl, '_blank');
+            
+            // UI Feedback: Show success message and hide form
+            enquiryForm.style.opacity = '0';
+            setTimeout(() => {
+                enquiryForm.style.display = 'none';
+                formSuccessMessage.style.display = 'block';
+                formSuccessMessage.style.opacity = '0';
+                setTimeout(() => {
+                    formSuccessMessage.style.opacity = '1';
+                    formSuccessMessage.style.transition = 'opacity 0.5s ease-in';
+                }, 50);
+            }, 300);
+            
+            // Optional: Log submission
+            console.log('Form submitted to WhatsApp:', { name, phone, requirement });
+        });
     }
 });
 

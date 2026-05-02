@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Certificates | Psido Employee Portal</title>
+<link rel="icon" type="image/png" href="../assets/images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="../css/portal.css">
+</head>
+<body id="certPage">
+<div class="portal-layout">
+  <aside class="sidebar">
+    <div class="sidebar-header"><img src="../assets/images/logo.png" alt="Psido"><span>Psido Portal</span></div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-section">
+        <span class="sidebar-section-title">Main</span>
+        <a href="dashboard.html" class="sidebar-link"><i class="fas fa-home"></i> Dashboard</a>
+        <a href="payslip.html" class="sidebar-link"><i class="fas fa-file-invoice-dollar"></i> My Payslips</a>
+        <a href="certificate.html" class="sidebar-link active"><i class="fas fa-certificate"></i> Certificates</a>
+      </div>
+      <div class="sidebar-section">
+        <span class="sidebar-section-title">Account</span>
+        <a href="profile.html" class="sidebar-link"><i class="fas fa-user-cog"></i> Profile &amp; Settings</a>
+        <a href="#" class="sidebar-link" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      </div>
+    </nav>
+    <div class="sidebar-footer"><div class="sidebar-user"><div class="user-avatar"><span class="user-init">?</span></div><div><span class="user-name" style="display:block">Employee</span></div></div></div>
+  </aside>
+  <div class="portal-main">
+    <div class="portal-topbar"><h1>Certificates</h1></div>
+    <div class="portal-content">
+      <div class="section-card">
+        <div class="section-card-header"><h2>Request a Certificate</h2><span class="badge">New Request</span></div>
+        <form id="certRequestForm" class="cert-form" style="max-width:600px">
+          <div class="form-group">
+            <label class="form-label">Certificate Type *</label>
+            <select id="certType" class="form-control no-icon" required>
+              <option value="">Select type...</option>
+              <option value="Internship">Internship Completion Certificate</option>
+              <option value="Experience">Experience Certificate</option>
+              <option value="Employment">Employment Certificate</option>
+              <option value="Relieving">Relieving Letter</option>
+            </select>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+            <div class="form-group">
+              <label class="form-label">From Date *</label>
+              <input type="date" id="fromDate" class="form-control no-icon" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">To Date *</label>
+              <input type="date" id="toDate" class="form-control no-icon" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Purpose / Notes</label>
+            <textarea class="form-control no-icon" rows="3" placeholder="e.g. Required for visa application, higher education, etc."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-sm" style="width:auto"><i class="fas fa-paper-plane"></i> Submit Request</button>
+        </form>
+      </div>
+
+      <div class="section-card">
+        <div class="section-card-header"><h2>My Certificate Requests</h2></div>
+        <div class="payslips-list" id="certList"><p style="color:var(--text-muted)">Loading...</p></div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-card-header"><h2>How It Works</h2></div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem">
+          <div style="text-align:center;padding:1rem"><div style="width:48px;height:48px;border-radius:50%;background:rgba(0,212,255,0.1);color:var(--primary);display:flex;align-items:center;justify-content:center;margin:0 auto 0.75rem;font-weight:700">1</div><strong style="font-size:0.88rem">Submit Request</strong><p style="font-size:0.8rem;color:var(--text-muted);margin-top:0.25rem">Fill the form above</p></div>
+          <div style="text-align:center;padding:1rem"><div style="width:48px;height:48px;border-radius:50%;background:rgba(255,165,2,0.1);color:var(--warning);display:flex;align-items:center;justify-content:center;margin:0 auto 0.75rem;font-weight:700">2</div><strong style="font-size:0.88rem">Admin Review</strong><p style="font-size:0.8rem;color:var(--text-muted);margin-top:0.25rem">CEO approves within 2 days</p></div>
+          <div style="text-align:center;padding:1rem"><div style="width:48px;height:48px;border-radius:50%;background:rgba(0,255,136,0.1);color:var(--accent);display:flex;align-items:center;justify-content:center;margin:0 auto 0.75rem;font-weight:700">3</div><strong style="font-size:0.88rem">Download PDF</strong><p style="font-size:0.8rem;color:var(--text-muted);margin-top:0.25rem">Signed certificate ready</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="toast" class="toast"></div>
+<script src="../js/portal.js"></script>
+</body></html>

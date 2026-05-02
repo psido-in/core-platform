@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Certificates | Psido Admin</title>
+<link rel="icon" type="image/png" href="../assets/images/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="../css/admin.css">
+</head>
+<body id="certAdminPage">
+<div class="portal-layout">
+  <aside class="sidebar">
+    <div class="sidebar-header"><img src="../assets/images/logo.png" alt="Psido"><span style="color:var(--danger)">Admin Panel</span></div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-section">
+        <span class="sidebar-section-title">Management</span>
+        <a href="dashboard.html" class="sidebar-link"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        <a href="employees.html" class="sidebar-link"><i class="fas fa-users"></i> Employees</a>
+        <a href="certificates.html" class="sidebar-link active"><i class="fas fa-certificate"></i> Certificates</a>
+        <a href="payslips.html" class="sidebar-link"><i class="fas fa-file-invoice-dollar"></i> Payslips</a>
+      </div>
+      <div class="sidebar-section">
+        <span class="sidebar-section-title">Admin</span>
+        <a href="settings.html" class="sidebar-link"><i class="fas fa-cog"></i> Settings</a>
+        <a href="#" class="sidebar-link" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      </div>
+    </nav>
+    <div class="sidebar-footer"><div class="sidebar-user"><div class="user-avatar" style="background:linear-gradient(135deg,var(--danger),#7B2FBE)">A</div><div><span style="display:block;font-size:0.85rem;font-weight:600">CEO / Admin</span><span style="font-size:0.73rem;color:var(--danger)">Super Admin</span></div></div></div>
+  </aside>
+  <div class="portal-main">
+    <div class="portal-topbar"><h1>Certificate Approvals</h1></div>
+    <div class="portal-content">
+      <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem">
+        <select id="certFilter" class="filter-select"><option value="all">All Certificates</option><option value="pending">Pending</option><option value="approved">Approved</option><option value="rejected">Rejected</option></select>
+      </div>
+      <div class="section-card">
+        <div class="section-card-header"><h2>Certificate Requests</h2><p style="font-size:0.82rem;color:var(--text-muted)">Click Approve to enter your name and sign</p></div>
+        <div class="table-wrap">
+          <table class="table">
+            <thead><tr><th>ID</th><th>Employee</th><th>Type</th><th>Department</th><th>Period</th><th>Requested</th><th>Status</th><th>Actions</th></tr></thead>
+            <tbody id="certTableBody"><tr><td colspan="8" style="text-align:center;color:var(--text-muted)">Loading...</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Preview Modal -->
+<div class="modal-overlay" id="certPreviewModal">
+  <div class="modal" style="max-width:700px">
+    <div class="modal-header"><h2 style="font-family:var(--font-display);font-size:1.1rem">Certificate Preview</h2><button class="modal-close" id="closePreviewModal"><i class="fas fa-times"></i></button></div>
+    <div id="certPreviewArea"></div>
+    <div style="display:flex;gap:0.75rem;margin-top:1rem">
+      <button onclick="window.print()" class="btn btn-primary btn-sm" style="width:auto"><i class="fas fa-print"></i> Print Certificate</button>
+      <button onclick="document.getElementById('certPreviewModal').classList.remove('open')" class="btn btn-outline btn-sm" style="width:auto">Close</button>
+    </div>
+  </div>
+</div>
+<div id="toast" class="toast"></div>
+<script src="../js/admin.js"></script>
+</body></html>

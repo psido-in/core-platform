@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Payslips | Psido Admin</title>
+<link rel="icon" type="image/png" href="../assets/images/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="../css/admin.css">
+</head>
+<body id="payslipAdminPage">
+<div class="portal-layout">
+  <aside class="sidebar">
+    <div class="sidebar-header"><img src="../assets/images/logo.png" alt="Psido"><span style="color:var(--danger)">Admin Panel</span></div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-section">
+        <span class="sidebar-section-title">Management</span>
+        <a href="dashboard.html" class="sidebar-link"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        <a href="employees.html" class="sidebar-link"><i class="fas fa-users"></i> Employees</a>
+        <a href="certificates.html" class="sidebar-link"><i class="fas fa-certificate"></i> Certificates</a>
+        <a href="payslips.html" class="sidebar-link active"><i class="fas fa-file-invoice-dollar"></i> Payslips</a>
+      </div>
+      <div class="sidebar-section">
+        <span class="sidebar-section-title">Admin</span>
+        <a href="settings.html" class="sidebar-link"><i class="fas fa-cog"></i> Settings</a>
+        <a href="#" class="sidebar-link" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      </div>
+    </nav>
+    <div class="sidebar-footer"><div class="sidebar-user"><div class="user-avatar" style="background:linear-gradient(135deg,var(--danger),#7B2FBE)">A</div><div><span style="display:block;font-size:0.85rem;font-weight:600">CEO / Admin</span></div></div></div>
+  </aside>
+  <div class="portal-main">
+    <div class="portal-topbar">
+      <h1>Payslip Management</h1>
+      <button id="addPayslipBtn" class="btn btn-primary btn-sm" style="width:auto"><i class="fas fa-plus"></i> Add Payslip</button>
+    </div>
+    <div class="portal-content">
+      <div class="section-card">
+        <div class="section-card-header"><h2>All Payslips</h2></div>
+        <div class="table-wrap">
+          <table class="table">
+            <thead><tr><th>ID</th><th>Employee</th><th>Month</th><th>Gross</th><th>Deductions</th><th>Net</th><th>Date</th><th>Status</th></tr></thead>
+            <tbody id="payslipTableBody"><tr><td colspan="8" style="text-align:center;color:var(--text-muted)">Loading...</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add Payslip Modal -->
+<div class="modal-overlay" id="addPayslipModal">
+  <div class="modal">
+    <div class="modal-header"><h2 style="font-family:var(--font-display);font-size:1.2rem">Add Payslip</h2><button class="modal-close" id="closePayslipModal"><i class="fas fa-times"></i></button></div>
+    <form id="addPayslipForm">
+      <div class="form-group"><label class="form-label">Employee ID *</label><input type="text" id="psEmpId" class="form-control no-icon" required placeholder="e.g. EMP001"></div>
+      <div class="form-group"><label class="form-label">Month *</label><input type="text" id="psMonth" class="form-control no-icon" required placeholder="e.g. May 2026"></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+        <div class="form-group"><label class="form-label">Gross Salary (₹) *</label><input type="number" id="psGross" class="form-control no-icon" required placeholder="65000"></div>
+        <div class="form-group"><label class="form-label">Deductions (₹) *</label><input type="number" id="psDeductions" class="form-control no-icon" required placeholder="8000"></div>
+      </div>
+      <div style="padding:0.75rem;background:var(--bg-elevated);border-radius:8px;font-size:0.85rem;color:var(--text-muted);margin-bottom:1rem">Net salary will be calculated automatically: Gross − Deductions</div>
+      <div style="display:flex;gap:0.75rem">
+        <button type="submit" class="btn btn-primary btn-sm" style="width:auto"><i class="fas fa-save"></i> Save Payslip</button>
+        <button type="button" class="btn btn-outline btn-sm" style="width:auto" onclick="document.getElementById('addPayslipModal').classList.remove('open')">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+<div id="toast" class="toast"></div>
+<script src="../js/admin.js"></script>
+</body></html>

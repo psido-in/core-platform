@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Dashboard | Psido Employee Portal</title>
+<link rel="icon" type="image/png" href="../assets/images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="../css/portal.css">
+</head>
+<body id="dashboardPage">
+<div class="portal-layout">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-header"><img src="../assets/images/logo.png" alt="Psido"><span>Psido Portal</span></div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-section">
+        <span class="sidebar-section-title">Main</span>
+        <a href="dashboard.html" class="sidebar-link active"><i class="fas fa-home"></i> Dashboard</a>
+        <a href="payslip.html" class="sidebar-link"><i class="fas fa-file-invoice-dollar"></i> My Payslips</a>
+        <a href="certificate.html" class="sidebar-link"><i class="fas fa-certificate"></i> Certificates</a>
+      </div>
+      <div class="sidebar-section">
+        <span class="sidebar-section-title">Account</span>
+        <a href="profile.html" class="sidebar-link"><i class="fas fa-user-cog"></i> Profile &amp; Settings</a>
+        <a href="#" class="sidebar-link" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      </div>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="user-avatar user-init">RK</div>
+        <div><span class="user-name">Employee</span><span class="user-role">Loading...</span></div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <div class="portal-main">
+    <div class="portal-topbar">
+      <h1>Dashboard</h1>
+      <div class="topbar-actions">
+        <div class="notif-btn"><i class="fas fa-bell"></i><span class="notif-dot"></span></div>
+        <div style="display:flex;align-items:center;gap:0.5rem">
+          <div class="user-avatar" style="width:32px;height:32px;font-size:0.75rem;user-select:none">
+            <span class="user-init" style="display:contents">?</span>
+          </div>
+          <span class="user-name" style="font-size:0.88rem">Employee</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="portal-content">
+      <div style="margin-bottom:2rem">
+        <h2 style="font-family:var(--font-display);font-size:1.4rem">Good morning, <span class="user-name" style="color:var(--primary)">Employee</span> 👋</h2>
+        <p style="color:var(--text-muted);font-size:0.9rem">Here's your HR overview for today</p>
+      </div>
+
+      <div class="dashboard-grid">
+        <div class="dash-card"><div class="dash-card-icon cyan"><i class="fas fa-file-invoice-dollar"></i></div><h3 id="payslipCount">0</h3><p>Payslips Available</p></div>
+        <div class="dash-card"><div class="dash-card-icon green"><i class="fas fa-certificate"></i></div><h3 id="certCount">0</h3><p>Certificate Requests</p></div>
+        <div class="dash-card"><div class="dash-card-icon orange"><i class="fas fa-clock"></i></div><h3 id="pendingCount">0</h3><p>Pending Approvals</p></div>
+        <div class="dash-card"><div class="dash-card-icon purple"><i class="fas fa-shield-alt"></i></div><h3>Active</h3><p>Account Status</p></div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-card-header"><h2>Quick Actions</h2></div>
+        <div class="quick-actions">
+          <a href="payslip.html" class="quick-action-btn"><i class="fas fa-download"></i><span>Download Payslip</span></a>
+          <a href="certificate.html" class="quick-action-btn"><i class="fas fa-plus-circle"></i><span>Request Certificate</span></a>
+          <a href="profile.html" class="quick-action-btn"><i class="fas fa-user-edit"></i><span>Update Profile</span></a>
+          <a href="profile.html#security" class="quick-action-btn"><i class="fas fa-lock"></i><span>Change Password</span></a>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-card-header"><h2>Company Announcements</h2></div>
+        <div style="display:flex;flex-direction:column;gap:1rem">
+          <div style="padding:1rem;background:var(--bg-elevated);border-radius:10px;border-left:3px solid var(--primary)">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:1rem">
+              <div><strong style="font-size:0.9rem">Security Awareness Training — May 2026</strong><p style="font-size:0.82rem;color:var(--text-muted);margin-top:0.3rem">Mandatory phishing simulation and awareness training scheduled for May 15. All employees must complete by May 20.</p></div>
+              <span style="font-size:0.75rem;color:var(--text-muted);white-space:nowrap">May 1, 2026</span>
+            </div>
+          </div>
+          <div style="padding:1rem;background:var(--bg-elevated);border-radius:10px;border-left:3px solid var(--accent)">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:1rem">
+              <div><strong style="font-size:0.9rem">April Payslips Processed</strong><p style="font-size:0.82rem;color:var(--text-muted);margin-top:0.3rem">April 2026 salary has been credited. Download your payslip from the Payslips section.</p></div>
+              <span style="font-size:0.75rem;color:var(--text-muted);white-space:nowrap">Apr 30, 2026</span>
+            </div>
+          </div>
+          <div style="padding:1rem;background:var(--bg-elevated);border-radius:10px;border-left:3px solid var(--warning)">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:1rem">
+              <div><strong style="font-size:0.9rem">Office Closed — May 12 (Buddha Purnima)</strong><p style="font-size:0.82rem;color:var(--text-muted);margin-top:0.3rem">The Bengaluru office will remain closed. SOC team to follow on-call schedule as usual.</p></div>
+              <span style="font-size:0.75rem;color:var(--text-muted);white-space:nowrap">Apr 28, 2026</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="toast" class="toast"></div>
+<script src="../js/portal.js"></script>
+</body></html>

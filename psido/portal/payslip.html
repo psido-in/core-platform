@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>My Payslips | Psido Employee Portal</title>
+<link rel="icon" type="image/png" href="../assets/images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="../css/portal.css">
+</head>
+<body id="payslipPage">
+<div class="portal-layout">
+  <aside class="sidebar">
+    <div class="sidebar-header"><img src="../assets/images/logo.png" alt="Psido"><span>Psido Portal</span></div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-section">
+        <span class="sidebar-section-title">Main</span>
+        <a href="dashboard.html" class="sidebar-link"><i class="fas fa-home"></i> Dashboard</a>
+        <a href="payslip.html" class="sidebar-link active"><i class="fas fa-file-invoice-dollar"></i> My Payslips</a>
+        <a href="certificate.html" class="sidebar-link"><i class="fas fa-certificate"></i> Certificates</a>
+      </div>
+      <div class="sidebar-section">
+        <span class="sidebar-section-title">Account</span>
+        <a href="profile.html" class="sidebar-link"><i class="fas fa-user-cog"></i> Profile &amp; Settings</a>
+        <a href="#" class="sidebar-link" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      </div>
+    </nav>
+    <div class="sidebar-footer"><div class="sidebar-user"><div class="user-avatar"><span class="user-init">?</span></div><div><span class="user-name" style="display:block">Employee</span><span class="user-role" style="font-size:0.73rem;color:var(--text-muted)">Loading...</span></div></div></div>
+  </aside>
+  <div class="portal-main">
+    <div class="portal-topbar"><h1>My Payslips</h1><div class="topbar-actions"><div class="notif-btn"><i class="fas fa-bell"></i><span class="notif-dot"></span></div></div></div>
+    <div class="portal-content">
+      <div class="section-card">
+        <div class="section-card-header">
+          <h2>Salary Statements</h2>
+          <span class="badge badge-success"><i class="fas fa-check-circle"></i> All Paid</span>
+        </div>
+        <div class="payslips-list" id="payslipList"><p style="color:var(--text-muted);text-align:center;padding:2rem">Loading payslips...</p></div>
+      </div>
+      <div class="section-card">
+        <div class="section-card-header"><h2>Salary Breakdown</h2></div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem">
+          <div style="background:var(--bg-elevated);border-radius:var(--radius);padding:1.25rem;text-align:center"><div style="font-size:0.75rem;color:var(--text-muted);margin-bottom:0.5rem">BASIC SALARY</div><div style="font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:var(--primary)">60%</div><div style="font-size:0.8rem;color:var(--text-muted)">of Gross</div></div>
+          <div style="background:var(--bg-elevated);border-radius:var(--radius);padding:1.25rem;text-align:center"><div style="font-size:0.75rem;color:var(--text-muted);margin-bottom:0.5rem">HRA</div><div style="font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:var(--accent)">20%</div><div style="font-size:0.8rem;color:var(--text-muted)">of Basic</div></div>
+          <div style="background:var(--bg-elevated);border-radius:var(--radius);padding:1.25rem;text-align:center"><div style="font-size:0.75rem;color:var(--text-muted);margin-bottom:0.5rem">PF DEDUCTION</div><div style="font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:var(--warning)">12%</div><div style="font-size:0.8rem;color:var(--text-muted)">of Basic</div></div>
+          <div style="background:var(--bg-elevated);border-radius:var(--radius);padding:1.25rem;text-align:center"><div style="font-size:0.75rem;color:var(--text-muted);margin-bottom:0.5rem">ALLOWANCES</div><div style="font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:#a855f7">20%</div><div style="font-size:0.8rem;color:var(--text-muted)">of Gross</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="toast" class="toast"></div>
+<script src="../js/portal.js"></script>
+</body></html>

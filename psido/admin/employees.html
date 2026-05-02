@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Manage Employees | Psido Admin</title>
+<link rel="icon" type="image/png" href="../assets/images/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="../css/admin.css">
+</head>
+<body id="empPage">
+<div class="portal-layout">
+  <aside class="sidebar">
+    <div class="sidebar-header"><img src="../assets/images/logo.png" alt="Psido"><span style="color:var(--danger)">Admin Panel</span></div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-section">
+        <span class="sidebar-section-title">Management</span>
+        <a href="dashboard.html" class="sidebar-link"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        <a href="employees.html" class="sidebar-link active"><i class="fas fa-users"></i> Employees</a>
+        <a href="certificates.html" class="sidebar-link"><i class="fas fa-certificate"></i> Certificates</a>
+        <a href="payslips.html" class="sidebar-link"><i class="fas fa-file-invoice-dollar"></i> Payslips</a>
+      </div>
+      <div class="sidebar-section">
+        <span class="sidebar-section-title">Admin</span>
+        <a href="settings.html" class="sidebar-link"><i class="fas fa-cog"></i> Settings</a>
+        <a href="#" class="sidebar-link" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      </div>
+    </nav>
+    <div class="sidebar-footer"><div class="sidebar-user"><div class="user-avatar" style="background:linear-gradient(135deg,var(--danger),#7B2FBE)">A</div><div><span style="display:block;font-size:0.85rem;font-weight:600">CEO / Admin</span><span style="font-size:0.73rem;color:var(--danger)">Super Admin</span></div></div></div>
+  </aside>
+  <div class="portal-main">
+    <div class="portal-topbar">
+      <h1>Manage Employees</h1>
+      <button id="addEmpBtn" class="btn btn-primary btn-sm" style="width:auto"><i class="fas fa-user-plus"></i> Add Employee / Intern</button>
+    </div>
+    <div class="portal-content">
+      <div class="search-bar">
+        <input type="text" id="empSearch" class="search-input" placeholder="Search by name or email...">
+        <select class="filter-select"><option>All Departments</option><option>SOC</option><option>VAPT</option><option>Cloud Security</option><option>Compliance</option><option>HR</option></select>
+      </div>
+      <div class="section-card">
+        <div class="section-card-header"><h2>Employee Directory</h2></div>
+        <div class="table-wrap">
+          <table class="table">
+            <thead><tr><th>ID</th><th>Name</th><th>Email</th><th>Role</th><th>Dept</th><th>Joined</th><th>Status</th><th>Actions</th></tr></thead>
+            <tbody id="empTableBody"><tr><td colspan="8" style="text-align:center;color:var(--text-muted)">Loading...</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add Employee Modal -->
+<div class="modal-overlay" id="addEmpModal">
+  <div class="modal">
+    <div class="modal-header"><h2 style="font-family:var(--font-display);font-size:1.2rem">Add New Employee / Intern</h2><button class="modal-close" id="closeModal"><i class="fas fa-times"></i></button></div>
+    <form id="addEmpForm">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+        <div class="form-group"><label class="form-label">Full Name *</label><input type="text" id="empName" class="form-control no-icon" required placeholder="Full Name"></div>
+        <div class="form-group"><label class="form-label">Email *</label><input type="email" id="empEmail" class="form-control no-icon" required placeholder="email@psido.in"></div>
+        <div class="form-group"><label class="form-label">Password *</label><input type="password" id="empPass" class="form-control no-icon" required placeholder="Initial password"></div>
+        <div class="form-group"><label class="form-label">Role *</label>
+          <select id="empRole" class="form-control no-icon" required><option value="">Select role...</option><option>Security Analyst</option><option>Penetration Tester</option><option>SOC Engineer</option><option>Cloud Security Engineer</option><option>GRC Analyst</option><option>Intern</option></select>
+        </div>
+        <div class="form-group"><label class="form-label">Department *</label>
+          <select id="empDept" class="form-control no-icon" required><option value="">Select dept...</option><option>SOC</option><option>VAPT</option><option>Cloud Security</option><option>Compliance</option><option>HR</option></select>
+        </div>
+        <div class="form-group"><label class="form-label">Date Joined *</label><input type="date" id="empJoined" class="form-control no-icon" required></div>
+      </div>
+      <div style="display:flex;gap:0.75rem;margin-top:0.5rem">
+        <button type="submit" class="btn btn-primary btn-sm" style="width:auto"><i class="fas fa-user-plus"></i> Add Employee</button>
+        <button type="button" class="btn btn-outline btn-sm" style="width:auto" onclick="document.getElementById('addEmpModal').classList.remove('open')">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+<div id="toast" class="toast"></div>
+<script src="../js/admin.js"></script>
+</body></html>

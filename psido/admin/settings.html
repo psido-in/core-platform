@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Admin Settings | Psido</title>
+<link rel="icon" type="image/png" href="../assets/images/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="../css/admin.css">
+</head>
+<body id="adminSettingsPage">
+<div class="portal-layout">
+  <aside class="sidebar">
+    <div class="sidebar-header"><img src="../assets/images/logo.png" alt="Psido"><span style="color:var(--danger)">Admin Panel</span></div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-section">
+        <span class="sidebar-section-title">Management</span>
+        <a href="dashboard.html" class="sidebar-link"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        <a href="employees.html" class="sidebar-link"><i class="fas fa-users"></i> Employees</a>
+        <a href="certificates.html" class="sidebar-link"><i class="fas fa-certificate"></i> Certificates</a>
+        <a href="payslips.html" class="sidebar-link"><i class="fas fa-file-invoice-dollar"></i> Payslips</a>
+      </div>
+      <div class="sidebar-section">
+        <span class="sidebar-section-title">Admin</span>
+        <a href="settings.html" class="sidebar-link active"><i class="fas fa-cog"></i> Settings</a>
+        <a href="#" class="sidebar-link" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      </div>
+    </nav>
+    <div class="sidebar-footer"><div class="sidebar-user"><div class="user-avatar" style="background:linear-gradient(135deg,var(--danger),#7B2FBE)">A</div><div><span style="display:block;font-size:0.85rem;font-weight:600">CEO / Admin</span></div></div></div>
+  </aside>
+  <div class="portal-main">
+    <div class="portal-topbar"><h1>Admin Settings</h1></div>
+    <div class="portal-content">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start">
+        <div class="section-card">
+          <div class="section-card-header"><h2>Change Admin Password</h2></div>
+          <form id="adminPassForm" style="max-width:400px">
+            <div class="form-group"><label class="form-label">Current Password *</label><div class="input-wrap"><i class="fas fa-lock"></i><input type="password" id="currAdminPass" class="form-control" placeholder="Current password" required></div></div>
+            <div class="form-group"><label class="form-label">New Password *</label><div class="input-wrap"><i class="fas fa-lock"></i><input type="password" id="newAdminPass" class="form-control" placeholder="Min 8 characters" required></div></div>
+            <div class="form-group"><label class="form-label">Confirm Password *</label><div class="input-wrap"><i class="fas fa-lock"></i><input type="password" id="confAdminPass" class="form-control" placeholder="Repeat new password" required></div></div>
+            <button type="submit" class="btn btn-primary btn-sm" style="width:auto"><i class="fas fa-key"></i> Update Password</button>
+          </form>
+        </div>
+        <div>
+          <div class="section-card" style="margin-bottom:1rem"><div class="section-card-header"><h2>Certificate Settings</h2></div><p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:0.75rem">Upload CEO Signature for Certificates</p><input type="file" id="sigUpload" accept="image/png, image/jpeg" class="form-control" style="padding:0.5rem;font-size:0.8rem;margin-bottom:0.5rem"><div id="sigPreview" style="border:1px dashed var(--border);border-radius:4px;padding:0.5rem;text-align:center;font-size:0.8rem;color:var(--text-muted);background:var(--bg-deep)"><img id="sigImg" style="max-height:60px;display:none" alt="Signature preview"><span id="sigPlaceholder">No signature uploaded</span></div></div><div class="section-card" style="margin-bottom:1rem"><div class="section-card-header"><h2>System Info</h2></div>
+            <div style="display:flex;flex-direction:column;gap:0.75rem;font-size:0.85rem">
+              <div style="display:flex;justify-content:space-between"><span style="color:var(--text-muted)">Platform</span><span style="font-family:var(--font-mono)">Psido Portal v2.0</span></div>
+              <div style="display:flex;justify-content:space-between"><span style="color:var(--text-muted)">Storage</span><span style="font-family:var(--font-mono)">Browser localStorage</span></div>
+              <div style="display:flex;justify-content:space-between"><span style="color:var(--text-muted)">Admin Email</span><span style="font-family:var(--font-mono);color:var(--primary)">admin@psido.in</span></div>
+              <div style="display:flex;justify-content:space-between"><span style="color:var(--text-muted)">2FA Status</span><span class="status-badge active">Enabled</span></div>
+            </div>
+          </div>
+          <div class="section-card">
+            <div class="section-card-header"><h2>Danger Zone</h2></div>
+            <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1rem">Clear all demo data and reset to defaults. This cannot be undone.</p>
+            <button onclick="if(confirm('Reset ALL data?')){localStorage.clear();location.reload();}" class="btn btn-danger btn-sm" style="width:auto"><i class="fas fa-trash"></i> Reset All Data</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="toast" class="toast"></div>
+<script src="../js/admin.js"></script>
+</body></html>
+

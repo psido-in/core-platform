@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Admin Login | Psido Technologies</title>
+<link rel="icon" type="image/png" href="../assets/images/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+<div class="auth-page">
+  <div class="auth-bg"><div class="auth-orb auth-orb-1"></div><div class="auth-orb auth-orb-2"></div></div>
+  <div class="auth-box">
+    <div class="auth-logo"><img src="../assets/images/logo.png" alt="Psido"><span>Admin Panel</span></div>
+    <div id="step1">
+      <h1 class="auth-title">CEO / Admin Login</h1>
+      <p class="auth-subtitle">Restricted access. Authorised personnel only.</p>
+      <div style="padding:0.75rem 1rem;background:rgba(255,71,87,0.08);border:1px solid rgba(255,71,87,0.2);border-radius:10px;margin-bottom:1.25rem;font-size:0.82rem;color:var(--danger);display:flex;align-items:center;gap:0.5rem"><i class="fas fa-shield-alt"></i> Secure Admin Area â€” All actions are logged</div>
+      <form id="adminLoginForm" >
+        <div class="form-group"><label class="form-label">Admin Email</label><div class="input-wrap"><i class="fas fa-user-shield"></i><input type="email" id="adminEmail" class="form-control" placeholder="admin@psido.in" required></div></div>
+        <div class="form-group"><label class="form-label">Password</label><div class="input-wrap"><i class="fas fa-lock"></i><input type="password" id="adminPass" class="form-control" placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" required></div></div>
+        <button type="submit" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i> Secure Login</button>
+      </form>
+    </div>
+    <div id="step2" style="display:none">
+      <h1 class="auth-title">Admin 2FA Verification</h1>
+      <p class="auth-subtitle">Enter the OTP for added security</p>
+      <div class="alert alert-info show" style="display:block">Check your email for the OTP</div>
+      <form id="adminOtpForm" >
+        <div class="otp-boxes">
+          <input type="text" class="otp-input" maxlength="1" inputmode="numeric">
+          <input type="text" class="otp-input" maxlength="1" inputmode="numeric">
+          <input type="text" class="otp-input" maxlength="1" inputmode="numeric">
+          <input type="text" class="otp-input" maxlength="1" inputmode="numeric">
+          <input type="text" class="otp-input" maxlength="1" inputmode="numeric">
+          <input type="text" class="otp-input" maxlength="1" inputmode="numeric">
+        </div>
+        <button type="submit" class="btn btn-primary">Verify &amp; Enter</button>
+      </form>
+    </div>
+    <p style="text-align:center;margin-top:1.5rem"><a href="../portal/login.html" style="font-size:0.82rem;color:var(--text-muted)"><i class="fas fa-arrow-left"></i> Employee Portal Login</a></p>
+  </div>
+</div>
+<div id="toast" class="toast"></div>
+<script src="../js/admin.js"></script>
+</body></html>
+

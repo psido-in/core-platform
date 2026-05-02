@@ -1,0 +1,7 @@
+name = "psido-api"
+main = "index.js"
+compatibility_date = "2024-05-02"
+
+[[kv_namespaces]]
+binding = "PSIDO_DB"
+id = "332b28972fa3474a8fb454f362a66fb0"

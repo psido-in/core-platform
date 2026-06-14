@@ -1,796 +1,1056 @@
 <!DOCTYPE html>
+#This is the official Website
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PSIDO | Website Development & Digital Marketing Bangalore</title>
-  <meta name="description" content="PSIDO helps businesses grow with fast, beautiful websites and targeted digital marketing campaigns.">
-  <link rel="icon" type="image/png" href="psido-logo.png">
+  <title>Website Design Bangalore | Web Development, App & Branding — PSIDO</title>
+  <meta name="description" content="PSIDO is Bangalore's top digital agency. We build professional websites, mobile apps, branding & run digital marketing for local businesses. Call +91 8870210932.">
+  <meta name="keywords" content="website design bangalore, web development bangalore, branding bangalore, digital marketing bangalore, app development bangalore, business website bangalore, local seo bangalore, startup website bangalore, ecommerce website bangalore">
+  <meta name="author" content="PSIDO">
+  <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://psido.in/">
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700;900&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Website Design Bangalore | Web Development, App & Branding — PSIDO">
+  <meta property="og:description" content="We help Bangalore local businesses grow digitally. Professional websites, apps, branding & marketing. Call now!">
+  <meta property="og:image" content="https://psido.in/hero-visual.png">
+  <meta property="og:url" content="https://psido.in/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_IN">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Website Design Bangalore — PSIDO">
+  <meta name="twitter:description" content="Bangalore's premium digital agency for local businesses.">
+  <meta name="twitter:image" content="https://psido.in/hero-visual.png">
+
+  <link rel="icon" type="image/png" href="psido-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  
-  <!-- JSON-LD LocalBusiness & Organization Schema -->
+
+  <!-- Schema Markup -->
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Organization",
-          "@id": "https://psido.in/#organization",
-          "name": "PSIDO",
-          "url": "https://psido.in",
-          "logo": "https://psido.in/psido-logo.png",
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+91-8870210932",
-            "contactType": "sales",
-            "areaServed": "IN",
-            "availableLanguage": ["en"]
-          }
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://psido.in/#localbusiness",
+        "name": "PSIDO",
+        "description": "Website design, app development, branding and digital marketing agency in Bangalore serving local businesses.",
+        "url": "https://psido.in",
+        "logo": "https://psido.in/psido-logo.png",
+        "image": "https://psido.in/hero-visual.png",
+        "telephone": ["+91-8870210932", "+91-6361345841"],
+        "email": "enquiry@psido.in",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bangalore",
+          "addressRegion": "Karnataka",
+          "addressCountry": "IN"
         },
-        {
-          "@type": "LocalBusiness",
-          "@id": "https://psido.in/#localbusiness",
-          "name": "PSIDO Bangalore HQ",
-          "image": "https://psido.in/psido-logo.png",
-          "telephone": "+91-8870210932",
-          "email": "growth@psido.in",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Bangalore (Remote Operations)",
-            "addressLocality": "Bangalore",
-            "addressRegion": "Karnataka",
-            "postalCode": "560038",
-            "addressCountry": "IN"
-          },
-          "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": "12.9716",
-            "longitude": "77.5946"
-          },
-          "url": "https://psido.in"
-        }
-      ]
-    }
+        "geo": { "@type": "GeoCoordinates", "latitude": "12.9716", "longitude": "77.5946" },
+        "areaServed": "Bangalore",
+        "priceRange": "₹₹",
+        "sameAs": ["https://www.instagram.com/psido.in"]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "How much does a website cost in Bangalore?", "acceptedAnswer": { "@type": "Answer", "text": "PSIDO builds professional business websites for Bangalore SMBs. Contact us for a custom quote tailored to your needs." } },
+          { "@type": "Question", "name": "Do you build apps for small businesses?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! We build custom billing apps, inventory apps, and order management apps for small businesses across Bangalore." } },
+          { "@type": "Question", "name": "How long does it take to build a website?", "acceptedAnswer": { "@type": "Answer", "text": "A standard business website takes 7-14 working days. Complex e-commerce or app projects take 3-8 weeks." } }
+        ]
+      }
+    ]
+  }
   </script>
 </head>
-<body data-page="home">
+<body>
 
   <!-- Custom Cursor -->
-  <div id="cursor" class="custom-cursor"></div>
-  <div id="cursor-ring" class="custom-cursor-ring"></div>
+  <div id="cursor-blade"></div>
+  <div id="cursor-trail"></div>
 
-  <!-- Three.js Canvas Container -->
-  <div id="bg-canvas"></div>
+  <!-- WhatsApp Float -->
+  <div class="whatsapp-float">
+    <a href="https://wa.me/918870210932?text=Hello%20PSIDO!%20I%20want%20to%20grow%20my%20business%20online." target="_blank" rel="noopener" class="whatsapp-btn" aria-label="Chat on WhatsApp">
+      <div class="whatsapp-pulse"></div>
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+    </a>
+  </div>
 
-  <!-- Navbar -->
-  <header class="navbar">
-    <div class="nav-container">
-      <a href="index.html" class="logo-link">
-        <img src="psido-logo.png" alt="PSIDO Wolf Logo" class="logo-img">
-        <span class="logo-text">PSIDO</span>
+  <!-- ── NAVBAR ── -->
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <img src="psido-logo.png" alt="PSIDO Logo" width="36" height="36">
+        PSID<span>O</span>
       </a>
-      
-      <nav>
-        <ul class="nav-menu">
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="industries.html">Industries</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="blog.html">Blog</a></li>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#story-section">Our Story</a></li>
+          <li><a href="#apps">App Dev</a></li>
+          <li><a href="#portfolio">Work</a></li>
+          <li><a href="#faq">FAQ</a></li>
         </ul>
       </nav>
 
-      <div class="nav-cta">
-        <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 0.25rem;">
-          <a href="tel:+918870210932" class="nav-phone" style="font-size: 0.8rem;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-            <span>+91 8870210932</span>
+      <div class="nav-cta-group">
+        <div class="nav-phones">
+          <a href="tel:+918870210932" class="nav-phone" aria-label="Call PSIDO 8870210932">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            8870210932
           </a>
-          <a href="tel:+916361345841" class="nav-phone" style="font-size: 0.8rem;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-            <span>+91 6361345841</span>
+          <a href="tel:+916361345841" class="nav-phone" aria-label="Call PSIDO 6361345841">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            6361345841
           </a>
         </div>
-        <a href="contact.html" class="btn-premium">
-          <span>Start Project</span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-        </a>
+        <div class="magnetic-wrap">
+          <a href="#contact" class="btn btn-primary btn-sm">Get Started</a>
+        </div>
       </div>
+
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
+  <!-- Mobile Nav -->
+  <nav class="nav-mobile" id="mobile-nav" aria-label="Mobile Navigation">
+    <a href="#services">Services</a>
+    <a href="#story-section">Our Story</a>
+    <a href="#apps">App Development</a>
+    <a href="#branding">Branding</a>
+    <a href="#portfolio">Work</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+    <div class="nav-mobile-cta">
+      <a href="tel:+918870210932" class="btn btn-ghost" style="width:100%; justify-content:center;">📞 Call: +91 8870210932</a>
+      <a href="tel:+916361345841" class="btn btn-ghost" style="width:100%; justify-content:center; margin-top:0.5rem;">📞 Call: +91 6361345841</a>
+    </div>
+  </nav>
+
   <main>
-    <section class="hero">
-      <div class="hero-grid">
-        <div class="hero-content reveal-on-scroll">
-          <div class="section-label">
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
-            <span>Bangalore's Premier Growth Agency</span>
-          </div>
 
-          <h1 class="hero-title text-gradient">
-            Building Digital <br>
-            <span class="text-gradient-purple cycling-text" id="cycling-text">Experiences</span> <br>
-            That Drive Growth.
-          </h1>
+    <!-- ══════════════════════════════════════════════
+         SECTION 1 — HERO
+    ══════════════════════════════════════════════ -->
+    <section class="hero" id="hero">
+      <div class="hero-grid-bg"></div>
+      <div class="hero-glow"></div>
 
-          <p class="hero-desc">
-            We build fast, beautiful websites and launch Google &amp; social media ads to bring more customers to your business.
-          </p>
-
-          <div class="hero-buttons">
-            <a href="contact.html" class="btn-premium">
-              <span>Launch Your Growth Engine</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-            </a>
-            <a href="services.html" class="btn-secondary">
-              <span>Explore Capabilities</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="hero-laptop-col reveal-on-scroll">
-          <!-- Laptop removed to make room for 3D Story -->
-        </div>
+      <div class="hero-eyebrow">
+        <span class="dot"></span>
+        Bangalore's Premium Digital Agency
       </div>
-    </section>
 
-    <!-- ── TRUSTED BRANDS MARQUEE ── -->
-    <section style="background: var(--card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 2.5rem 0; overflow: hidden; position: relative;">
-      <div class="container" style="text-align: center; margin-bottom: 1.5rem;">
-        <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--muted);">Trusted by Growing Businesses</span>
-      </div>
-      <div class="ticker-strip" style="background: transparent; border: none; padding: 0;">
-        <div class="ticker-wrap" style="display: inline-flex; align-items: center; gap: 4rem; animation: ticker-slide 30s linear infinite;">
-          <img src="powerhouse-case.png" alt="Powerhouse Tech" style="height: 35px; opacity: 0.6; filter: grayscale(100%) brightness(200%); transition: all 0.3s;" onmouseover="this.style.opacity='1'; this.style.filter='grayscale(0%) brightness(100%)'" onmouseout="this.style.opacity='0.6'; this.style.filter='grayscale(100%) brightness(200%)'">
-          <span style="font-size: 1.25rem; font-weight: 900; letter-spacing: 1px; color: var(--muted); opacity: 0.6;">AEROSPACE DYNAMICS</span>
-          <span style="font-size: 1.25rem; font-weight: 900; letter-spacing: 1px; color: var(--muted); opacity: 0.6;">NEXUS RETAIL</span>
-          <span style="font-size: 1.25rem; font-weight: 900; letter-spacing: 1px; color: var(--muted); opacity: 0.6;">ZENITH HEALTHCARE</span>
-          <img src="powerhouse-case.png" alt="Powerhouse Tech" style="height: 35px; opacity: 0.6; filter: grayscale(100%) brightness(200%); transition: all 0.3s;" onmouseover="this.style.opacity='1'; this.style.filter='grayscale(0%) brightness(100%)'" onmouseout="this.style.opacity='0.6'; this.style.filter='grayscale(100%) brightness(200%)'">
-          <span style="font-size: 1.25rem; font-weight: 900; letter-spacing: 1px; color: var(--muted); opacity: 0.6;">AEROSPACE DYNAMICS</span>
-          <span style="font-size: 1.25rem; font-weight: 900; letter-spacing: 1px; color: var(--muted); opacity: 0.6;">NEXUS RETAIL</span>
-          <span style="font-size: 1.25rem; font-weight: 900; letter-spacing: 1px; color: var(--muted); opacity: 0.6;">ZENITH HEALTHCARE</span>
-        </div>
-      </div>
-      <!-- Gradient masks for smooth fade on edges -->
-      <div style="position: absolute; top: 0; bottom: 0; left: 0; width: 100px; background: linear-gradient(to right, var(--card), transparent); pointer-events: none;"></div>
-      <div style="position: absolute; top: 0; bottom: 0; right: 0; width: 100px; background: linear-gradient(to left, var(--card), transparent); pointer-events: none;"></div>
-    </section>
+      <h1 class="hero-title">
+        We Build
+        <span class="line-2" id="cycling-word">Websites</span>
+        That Grow Your Business
+      </h1>
 
-    <!-- ── WHY PSIDO ── -->
-    <section class="section-padding">
-      <div class="container">
-        <div class="section-header reveal-on-scroll">
-          <span class="section-label">// Strategic Edge</span>
-          <h2 class="section-title">Engineered For Scalability. Built For Authority.</h2>
-          <p class="section-desc">We design and develop premium digital experiences built to compete globally, optimized to rank on generative engines, and engineered to turn traffic into pipeline revenue.</p>
-        </div>
+      <p class="hero-sub">
+        From local clothing shops to restaurants to startups — PSIDO helps Bangalore businesses get online, look professional, and attract more customers every day.
+      </p>
 
-        <div class="grid-2col reveal-on-scroll" style="align-items: center;">
-          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-            <div class="glass-panel" style="padding: 2rem;">
-              <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--foreground);">Enterprise Credibility</h3>
-              <p style="color: var(--muted); font-size: 0.85rem; line-height: 1.6;">
-                A premium aesthetic that immediately instills brand trust and matches the visual standard of ₹50 Lakh+ global leaders.
-              </p>
-            </div>
-            <div class="glass-panel" style="padding: 2rem;">
-              <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--foreground);">AI Search Ready</h3>
-              <p style="color: var(--muted); font-size: 0.85rem; line-height: 1.6;">
-                Optimized semantic web architecture designed to rank high in traditional Google search and feature as references in Gemini, Perplexity, and ChatGPT.
-              </p>
-            </div>
-            <div class="glass-panel" style="padding: 2rem;">
-              <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--foreground);">ROI Focused Automation</h3>
-              <p style="color: var(--muted); font-size: 0.85rem; line-height: 1.6;">
-                Direct lead-capture frameworks, dynamic ROI calculators, and AI automation integrations designed to streamline customer acquisition pipelines.
-              </p>
-            </div>
-          </div>
-          
-          <div style="position: relative; border-radius: 16px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4); height: 450px;">
-            <img src="dashboard-preview.png" alt="PSIDO Client Dashboard Mockup" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── SERVICES ── -->
-    <section class="section-padding" style="background: rgba(9, 9, 22, 0.02);">
-      <div class="container">
-        <div class="section-header reveal-on-scroll" style="text-align: left; margin-bottom: 4rem; display: flex; justify-content: space-between; align-items: flex-end;">
-          <div>
-            <span class="section-label">// Core Capabilities</span>
-            <h2 class="section-title" style="margin-bottom: 0;">Our Growth Suite</h2>
-          </div>
-          <a href="services.html" style="color: var(--primary); font-size: 0.85rem; font-weight: 700; text-decoration: none; display: flex; align-items: center; gap: 0.25rem;">
-            <span>View All Services</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      <div class="hero-actions">
+        <div class="magnetic-wrap">
+          <a href="#contact" class="btn btn-primary btn-lg">
+            Start Your Project
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
         </div>
+        <a href="#story-section" class="btn btn-ghost btn-lg">Watch Our Story ↓</a>
+      </div>
 
-        <div class="services-tabs-container reveal-on-scroll">
-          
-          <!-- Sidebar Nav Buttons -->
-          <div class="services-tabs">
-            <span style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; color: var(--muted); font-weight: 700; margin-bottom: 0.5rem; padding-left: 1rem;">Capabilities Index</span>
-            
-            <button class="tab-btn active" data-tab="web-dev">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-              <div style="display: flex; flex-direction: column;">
-                <span style="font-size: 0.85rem; font-weight: 700;">Website Development</span>
-                <span style="font-size: 0.65rem; color: var(--muted);">Next.js / Custom Engineering</span>
-              </div>
-            </button>
+      <div class="hero-trust">
+        <div class="hero-trust-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Local Businesses Served
+        </div>
+        <div class="hero-trust-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Fast Delivery
+        </div>
+        <div class="hero-trust-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          100% Satisfaction
+        </div>
+      </div>
 
-            <button class="tab-btn" data-tab="seo">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-              <div style="display: flex; flex-direction: column;">
-                <span style="font-size: 0.85rem; font-weight: 700;">SEO Services</span>
-                <span style="font-size: 0.65rem; color: var(--muted);">Organic Traffic Domination</span>
-              </div>
-            </button>
+      <div class="hero-scroll">
+        <div class="scroll-line"></div>
+        Scroll to Explore
+      </div>
+    </section>
 
-            <button class="tab-btn" data-tab="digital-marketing">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
-              <div style="display: flex; flex-direction: column;">
-                <span style="font-size: 0.85rem; font-weight: 700;">Digital Marketing</span>
-                <span style="font-size: 0.65rem; color: var(--muted);">High Conversion Ads</span>
-              </div>
-            </button>
-
-            <button class="tab-btn" data-tab="branding">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-              <div style="display: flex; flex-direction: column;">
-                <span style="font-size: 0.85rem; font-weight: 700;">Branding & UI/UX</span>
-                <span style="font-size: 0.65rem; color: var(--muted);">Figma design frameworks</span>
-              </div>
-            </button>
-          </div>
-
-          <!-- Active Panels -->
-          <div class="glass-panel" style="padding: 3rem;">
-            
-            <!-- Panel 1: Website Dev -->
-            <div id="web-dev" class="tab-panel active">
-              <div class="tab-panel-header">
-                <span style="font-size: 0.65rem; font-family: monospace; color: var(--primary); text-transform: uppercase;">Website Development Company Bangalore</span>
-                <h2 style="color: var(--foreground); margin-top: 0.25rem;">Website Development & Web Applications</h2>
-                <div class="tagline">High-performance Next.js and custom web systems built to scale.</div>
-                <p class="overview">
-                  Your website is the face of your business. We build beautiful, fast websites that make your business look highly professional and turn visitors into paying customers. We don't use slow templates; everything is custom-made to load instantly and rank high on Google.
-                </p>
-              </div>
-
-              <div style="margin-bottom: 2.5rem;">
-                <h3 class="benefits-title">Core Benefits</h3>
-                <div class="benefits-grid">
-                  <div class="benefit-item">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    <span>Sub-second load times using static generation (SSG) and server component rendering (RSC).</span>
-                  </div>
-                  <div class="benefit-item">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    <span>Robust responsive frameworks looking premium on mobile, tablet, and desktop displays.</span>
-                  </div>
-                  <div class="benefit-item">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    <span>Headless CMS setups (Sanity, Strapi) letting your marketing team edit content without code.</span>
-                  </div>
-                  <div class="benefit-item">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    <span>Lighthouse scores optimized to 95+ out-of-the-box for better organic Google positioning.</span>
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <h3 class="benefits-title">Our Methodology</h3>
-                <div class="method-grid">
-                  <div class="method-card">
-                    <div class="method-step">01</div>
-                    <div class="method-name">Blueprint</div>
-                    <div class="method-desc">Mapping user flows and modules.</div>
-                  </div>
-                  <div class="method-card">
-                    <div class="method-step">02</div>
-                    <div class="method-name">Prototyping</div>
-                    <div class="method-desc">Figma layouts and UI mockups.</div>
-                  </div>
-                  <div class="method-card">
-                    <div class="method-step">03</div>
-                    <div class="method-name">Engineering</div>
-                    <div class="method-desc">Clean, optimized code build.</div>
-                  </div>
-                  <div class="method-card">
-                    <div class="method-step">04</div>
-                    <div class="method-name">Launch</div>
-                    <div class="method-desc">Audits and sitemap setup.</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="tech-badges-list">
-                <span class="tech-badge">Next.js 15</span>
-                <span class="tech-badge">React 19</span>
-                <span class="tech-badge">TypeScript</span>
-                <span class="tech-badge">Tailwind CSS</span>
-                <span class="tech-badge">Three.js</span>
-                <span class="tech-badge">Node.js</span>
-              </div>
-            </div>
-
-            <!-- Panel 2: SEO -->
-            <div id="seo" class="tab-panel">
-              <div class="tab-panel-header">
-                <span style="font-size: 0.65rem; font-family: monospace; color: var(--primary); text-transform: uppercase;">SEO Company Bangalore</span>
-                <h2 style="color: var(--foreground); margin-top: 0.25rem;">Search Engine Optimization (SEO)</h2>
-                <div class="tagline">Aggressive SEO strategies targeting highly competitive keywords.</div>
-                <p class="overview">
-                  We get your business to the first page of Google. We don't just write generic content; we make sure people who are looking to buy can find you easily. Our SEO helps you beat local competitors and get noticed by customers using normal search and AI tools.
-                </p>
-              </div>
-
-              <div style="margin-bottom: 2.5rem;">
-                <h3 class="benefits-title">Core Benefits</h3>
-                <div class="benefits-grid">
-                  <div class="benefit-item">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    <span>Dominating first-page local search rankings in Bangalore and nationwide.</span>
-                  </div>
-                  <div class="benefit-item">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    <span>GEO (Generative Engine Optimization) ensuring placement in ChatGPT, Gemini, and Perplexity.</span>
-                  </div>
-                  <div class="benefit-item">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    <span>Deep semantic keyword structure targeting high-intent commercial buyers.</span>
-                  </div>
-                  <div class="benefit-item">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    <span>Technical audits resolving indexability, crawl budgets, and duplicate paths.</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="tech-badges-list">
-                <span class="tech-badge">Google Search Console</span>
-                <span class="tech-badge">Ahrefs</span>
-                <span class="tech-badge">Semrush</span>
-                <span class="tech-badge">JSON-LD FAQ Schema</span>
-              </div>
-            </div>
-
-            <!-- Panel 3: Digital Marketing -->
-            <div id="digital-marketing" class="tab-panel">
-              <div class="tab-panel-header">
-                <span style="font-size: 0.65rem; font-family: monospace; color: var(--primary); text-transform: uppercase;">Digital Marketing Agency Bangalore</span>
-                <h2 style="color: var(--foreground); margin-top: 0.25rem;">Digital & Performance Marketing</h2>
-                <div class="tagline">Paid campaigns and high-converting marketing funnels.</div>
-                <p class="overview">
-                  We run targeted ads on Google, Facebook, and Instagram to bring leads directly to you. We test different ad versions and design high-converting landing pages so you get the maximum return on your ad spend. Stop wasting money on ads that don't bring sales.
-                </p>
-              </div>
-
-              <div style="margin-bottom: 2.5rem;">
-                <h3 class="benefits-title">Core Benefits</h3>
-                <div class="benefits-grid">
-                  <div class="benefit-item">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    <span>Custom high-converting lead pages matching user intent.</span>
-                  </div>
-                  <div class="benefit-item">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    <span>Granular demographic and corporate targeting on paid channels.</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="tech-badges-list">
-                <span class="tech-badge">Google Ads Suite</span>
-                <span class="tech-badge">Meta Ads Manager</span>
-                <span class="tech-badge">LinkedIn Campaigns</span>
-              </div>
-            </div>
-
-            <!-- Panel 4: Branding -->
-            <div id="branding" class="tab-panel">
-              <div class="tab-panel-header">
-                <span style="font-size: 0.65rem; font-family: monospace; color: var(--primary); text-transform: uppercase;">Branding Agency Bangalore</span>
-                <h2 style="color: var(--foreground); margin-top: 0.25rem;">Branding & UI/UX Design</h2>
-                <div class="tagline">Futuristic identity and premium interface design systems.</div>
-                <p class="overview">
-                  A great brand builds trust instantly. We design premium logos, color schemes, and website layouts that make your business look like a multi-million dollar company. We make sure everything is beautiful, professional, and easy for your customers to use.
-                </p>
-              </div>
-
-              <div class="tech-badges-list">
-                <span class="tech-badge">Figma Enterprise</span>
-                <span class="tech-badge">Adobe Creative Cloud</span>
-                <span class="tech-badge">Blender 3D</span>
-              </div>
-            </div>
-
-          </div>
-
+    <!-- ══════════════════════════════════════════════
+         SECTION 2 — STORY ANIMATION
+    ══════════════════════════════════════════════ -->
+    <section class="story-section" id="story-section">
+      <div class="story-sticky">
+        <div class="story-canvas-wrap">
+          <canvas id="scene-canvas" aria-hidden="true"></canvas>
+        </div>
+        <div class="story-text-overlay">
+          <p id="story-text" class="story-scene-text" style="transition: opacity 0.4s ease;">
+            Your business today...
+          </p>
+          <p id="story-sub" class="story-scene-sub">
+            A great shop, but no online presence.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- ── PROCESS / HOW WE WORK ── -->
-    <section class="section-padding" style="background: rgba(16, 185, 129, 0.02);">
+    <!-- ══════════════════════════════════════════════
+         SECTION 3 — METRICS
+    ══════════════════════════════════════════════ -->
+    <section class="metrics-strip">
       <div class="container">
-        <div class="section-header reveal-on-scroll">
-          <span class="section-label">// Our Methodology</span>
-          <h2 class="section-title">How We Work</h2>
-          <p class="section-desc">A simple, proven four-step plan to get your business more customers.</p>
-        </div>
-
-        <div class="process-grid reveal-on-scroll">
-          <div class="process-card glass-panel">
-            <div class="process-number">01</div>
-            <div class="process-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-            </div>
-            <h3 class="process-title">Plan</h3>
-            <p class="process-desc">We talk with you to understand your business and figure out the best way to reach your customers online.</p>
+        <div class="metrics-grid">
+          <div>
+            <div class="metric-value" data-count="50" data-suffix="+">0+</div>
+            <div class="metric-label">Projects Delivered</div>
           </div>
-          <div class="process-card glass-panel">
-            <div class="process-number">02</div>
-            <div class="process-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
-            </div>
-            <h3 class="process-title">Design &amp; Build</h3>
-            <p class="process-desc">We build a beautiful, fast website that works perfectly on phones and computers.</p>
+          <div>
+            <div class="metric-value" data-count="100" data-suffix="%">0%</div>
+            <div class="metric-label">Client Satisfaction</div>
           </div>
-          <div class="process-card glass-panel">
-            <div class="process-number">03</div>
-            <div class="process-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-            </div>
-            <h3 class="process-title">Advertise</h3>
-            <p class="process-desc">We set up Google and social media ads so people searching for your services can find you immediately.</p>
+          <div>
+            <div class="metric-value" data-count="14" data-suffix=" Days">0 Days</div>
+            <div class="metric-label">Avg. Delivery Time</div>
           </div>
-          <div class="process-card glass-panel">
-            <div class="process-number">04</div>
-            <div class="process-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
-            </div>
-            <h3 class="process-title">Boost Sales</h3>
-            <p class="process-desc">We monitor what works best and keep improving your site to bring you a steady stream of new customers.</p>
+          <div>
+            <div class="metric-value" data-count="4.9" data-suffix="★">0★</div>
+            <div class="metric-label">Google Rating</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ── SELECTED PROJECTS ── -->
-    <section class="section-padding">
+    <!-- ══════════════════════════════════════════════
+         SECTION 4 — SERVICES
+    ══════════════════════════════════════════════ -->
+    <section class="section" id="services">
       <div class="container">
-        <div class="section-header reveal-on-scroll" style="margin-bottom: 2.5rem;">
-          <span class="section-label">// Selected Projects</span>
-          <h2 class="section-title">See How We Help Local Businesses</h2>
+        <div class="reveal" style="text-align: center; margin-bottom: 3.5rem;">
+          <span class="section-tag">What We Do</span>
+          <h2 class="section-title">
+            Everything Your Business Needs to<br>
+            <span class="highlight">Grow Digitally</span>
+          </h2>
+          <p class="section-desc" style="margin: 0 auto; text-align: center;">
+            We offer complete digital solutions — from a professional website to a custom app to running your ads on Google and Instagram.
+          </p>
         </div>
 
-        <div class="grid-3col reveal-on-scroll">
-          <div class="glass-panel" style="padding: 2rem;">
-            <img src="powerhouse-case.png" alt="Powerhouse Website" style="width: 100%; border-radius: 12px; margin-bottom: 1.5rem; height: 180px; object-fit: cover;">
-            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--foreground);">Powerhouse Computer Tech</h3>
-            <p style="color: var(--muted); font-size: 0.85rem; line-height: 1.6; margin-bottom: 1rem;">
-              We built a clean, professional website for this Bangalore computer repair shop, resulting in a 100% boost in business visibility without paying for ads.
-            </p>
-            <a href="https://powerhousecomputertech.in" target="_blank" rel="noopener" style="color: var(--primary); font-size: 0.85rem; font-weight: 700; text-decoration: none;">View Project ↗</a>
-          </div>
-          <!-- Placeholder cards to match simple grid -->
-          <div class="glass-panel" style="padding: 2rem;">
-            <div style="width: 100%; height: 180px; background: rgba(16,185,129,0.1); border-radius: 12px; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center;">
-              <span style="color: var(--primary); opacity: 0.5;">Project Coming Soon</span>
+        <div class="services-grid">
+
+          <!-- Service 1: Website -->
+          <article class="service-card reveal">
+            <div class="service-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
             </div>
-            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--foreground);">Local Retail Store</h3>
-            <p style="color: var(--muted); font-size: 0.85rem; line-height: 1.6; margin-bottom: 1rem;">
-              E-commerce platform build to help a local shop sell products across Bangalore with same-day delivery options.
-            </p>
-            <span style="color: var(--primary); font-size: 0.85rem; font-weight: 700;">Coming Soon</span>
-          </div>
-          <div class="glass-panel" style="padding: 2rem;">
-            <div style="width: 100%; height: 180px; background: rgba(16,185,129,0.1); border-radius: 12px; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center;">
-              <span style="color: var(--primary); opacity: 0.5;">Project Coming Soon</span>
+            <h2 class="service-title">Website Design & Development</h2>
+            <p class="service-desc">A professional website that makes your business look credible, helps customers find you on Google, and turns visitors into paying customers.</p>
+            <ul class="service-list">
+              <li>Business & Restaurant Websites</li>
+              <li>Portfolio & Professional Sites</li>
+              <li>E-Commerce Online Stores</li>
+              <li>Landing Pages & Lead Forms</li>
+              <li>Mobile-First Design</li>
+            </ul>
+            <a href="#contact" class="service-link">
+              Get a Website
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </article>
+
+          <!-- Service 2: App -->
+          <article class="service-card reveal reveal-delay-1">
+            <div class="service-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
             </div>
-            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--foreground);">Dental Clinic</h3>
-            <p style="color: var(--muted); font-size: 0.85rem; line-height: 1.6; margin-bottom: 1rem;">
-              Lead generation website allowing patients to book appointments directly, fully optimized for local searches.
-            </p>
-            <span style="color: var(--primary); font-size: 0.85rem; font-weight: 700;">Coming Soon</span>
-          </div>
+            <h2 class="service-title">Custom Mobile Apps</h2>
+            <p class="service-desc">Simple, powerful apps built specifically for your business — manage billing, inventory, customers, and orders all from your phone.</p>
+            <ul class="service-list">
+              <li>Billing Apps for Shops</li>
+              <li>Inventory Management Apps</li>
+              <li>Customer Management</li>
+              <li>Order Tracking Apps</li>
+              <li>Small Business Utility Apps</li>
+            </ul>
+            <a href="#contact" class="service-link">
+              Build Your App
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </article>
+
+          <!-- Service 3: Branding -->
+          <article class="service-card reveal reveal-delay-2">
+            <div class="service-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <h2 class="service-title">Branding & Visual Identity</h2>
+            <p class="service-desc">Make your business look professional and memorable. A strong brand makes customers trust you and choose you over competitors.</p>
+            <ul class="service-list">
+              <li>Logo Design</li>
+              <li>Brand Identity & Color Palette</li>
+              <li>Social Media Templates</li>
+              <li>Business Cards & Banners</li>
+              <li>Posters & Marketing Creatives</li>
+            </ul>
+            <a href="#contact" class="service-link">
+              Build Your Brand
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </article>
+
+          <!-- Service 4: Marketing -->
+          <article class="service-card reveal reveal-delay-3">
+            <div class="service-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            </div>
+            <h2 class="service-title">Local Advertising & Marketing</h2>
+            <p class="service-desc">Reach more customers in Bangalore through Google, Instagram, and local SEO. We run your ads and grow your online presence.</p>
+            <ul class="service-list">
+              <li>Google Business Profile Setup</li>
+              <li>Instagram & Facebook Promotions</li>
+              <li>Google Ads Campaigns</li>
+              <li>Local SEO (Rank on Google)</li>
+              <li>Performance Marketing</li>
+            </ul>
+            <a href="#contact" class="service-link">
+              Start Marketing
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </article>
+
+          <!-- Service 5: Startup -->
+          <article class="service-card reveal reveal-delay-4">
+            <div class="service-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <h2 class="service-title">Complete Startup Solutions</h2>
+            <p class="service-desc">Starting a new business? We handle everything digital from scratch — website, branding, app, and marketing in one complete package.</p>
+            <ul class="service-list">
+              <li>Website + Branding Bundle</li>
+              <li>Startup App Development</li>
+              <li>Social Media Setup</li>
+              <li>Google Business Profile</li>
+              <li>Complete Digital Launch Package</li>
+            </ul>
+            <a href="#contact" class="service-link">
+              Launch Your Startup
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </article>
+
         </div>
       </div>
     </section>
 
-    <!-- ── ROI CALCULATOR ── -->
-    <section class="section-padding">
+    <!-- ══════════════════════════════════════════════
+         SECTION 5 — WHY CHOOSE US
+    ══════════════════════════════════════════════ -->
+    <section class="section" id="why" style="background: var(--bg-2);">
       <div class="container">
-        <div class="section-header reveal-on-scroll">
-          <span class="section-label">// Conversion Engine</span>
-          <h2 class="section-title">Calculate Your Project Growth</h2>
-          <p class="section-desc">We focus on the metrics that drive actual profits. Use our simulation slider to calculate the potential revenue gains when upgrading to an optimized platform built by PSIDO.</p>
+        <div class="reveal" style="text-align: center; margin-bottom: 3.5rem;">
+          <span class="section-tag">Why PSIDO</span>
+          <h2 class="section-title">We Understand <span class="highlight">Local Business</span></h2>
+          <p class="section-desc" style="margin: 0 auto; text-align: center;">
+            We're not a big agency with complicated processes. We're a focused team that genuinely cares about helping Bangalore businesses grow.
+          </p>
         </div>
 
-        <div class="glass-panel reveal-on-scroll">
-          <div class="roi-container">
-            <div class="roi-inputs">
-              <div class="slider-group">
-                <div class="slider-label">
-                  <span>Monthly Website Visitors</span>
-                  <span id="val-traffic" class="value">10,000</span>
-                </div>
-                <input id="roi-traffic" type="range" min="1000" max="150000" step="1000" value="10000" class="roi-range">
-              </div>
-
-              <div class="slider-group">
-                <div class="slider-label">
-                  <span>Current Conversion Rate (%)</span>
-                  <span id="val-conversion" class="value">1.5%</span>
-                </div>
-                <input id="roi-conversion" type="range" min="0.1" max="10.0" step="0.1" value="1.5" class="roi-range">
-              </div>
-
-              <div class="slider-group">
-                <div class="slider-label">
-                  <span>Average Order Value (₹)</span>
-                  <span id="val-value" class="value">₹2,500</span>
-                </div>
-                <input id="roi-value" type="range" min="500" max="25000" step="500" value="2500" class="roi-range">
-              </div>
+        <div class="why-grid">
+          <div class="why-card reveal">
+            <div class="why-icon" style="background: var(--primary-dim); color: var(--primary);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
             </div>
-
-            <div class="roi-results">
-              <div>
-                <div class="roi-row">
-                  <span class="label">Current Monthly Revenue</span>
-                  <span id="roi-current-rev" class="val">₹375,000</span>
-                </div>
-                <div class="roi-highlight">
-                  <span class="label">Projected Monthly Revenue</span>
-                  <span id="roi-projected-rev" class="val text-gradient">₹1,350,000</span>
-                </div>
-              </div>
-
-              <div>
-                <div class="roi-stats-grid">
-                  <div class="roi-stat-box">
-                    <div class="box-lbl">Growth Lift</div>
-                    <div id="roi-increase" class="box-val">+₹975,000</div>
-                  </div>
-                  <div class="roi-stat-box">
-                    <div class="box-lbl">Conversion Lift</div>
-                    <div class="box-val">2x Uplift</div>
-                  </div>
-                </div>
-                <a href="contact.html" class="btn-premium" style="width: 100%; justify-content: center;">
-                  <span>Get Free SEO & Conversion Audit</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </a>
-              </div>
+            <h3>Fast Delivery</h3>
+            <p>We deliver most websites within 7–14 days. No long waits, no endless delays. You get your website up quickly so you can start getting customers.</p>
+          </div>
+          <div class="why-card reveal reveal-delay-1">
+            <div class="why-icon" style="background: var(--secondary-dim); color: var(--secondary);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
             </div>
+            <h3>We Speak Your Language</h3>
+            <p>No confusing tech jargon. We explain everything simply. You'll always understand what we're doing and why it helps your business.</p>
+          </div>
+          <div class="why-card reveal reveal-delay-2">
+            <div class="why-icon" style="background: var(--gold-dim); color: var(--gold);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+            </div>
+            <h3>100% Satisfaction</h3>
+            <p>We don't stop until you're completely happy. Your success is our success, and we're here to support you even after the project is complete.</p>
+          </div>
+          <div class="why-card reveal reveal-delay-1">
+            <div class="why-icon" style="background: rgba(239,68,68,0.1); color: #f87171;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </div>
+            <h3>SEO Built In</h3>
+            <p>Every website we build is optimized so customers can find you on Google when they search for your type of business in Bangalore.</p>
+          </div>
+          <div class="why-card reveal reveal-delay-2">
+            <div class="why-icon" style="background: rgba(6,182,212,0.1); color: #22d3ee;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            </div>
+            <h3>Mobile Friendly</h3>
+            <p>95% of your customers use smartphones. Every website and app we build looks perfect on mobile phones — automatically.</p>
+          </div>
+          <div class="why-card reveal reveal-delay-3">
+            <div class="why-icon" style="background: var(--primary-dim); color: var(--primary);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3>Ongoing Support</h3>
+            <p>We're always just a WhatsApp message away. Need changes, updates, or help? We respond fast and take care of everything.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Success Metrics -->
-    <section class="metrics-strip reveal-on-scroll">
-      <div class="metrics-grid">
-        <div class="metric-item">
-          <div class="metric-value">280%+</div>
-          <div class="metric-label">Avg. Organic Traffic increase</div>
-        </div>
-        <div class="metric-item">
-          <div class="metric-value">₹50Cr+</div>
-          <div class="metric-label">Client Revenue Generated</div>
-        </div>
-        <div class="metric-item">
-          <div class="metric-value">99.2%</div>
-          <div class="metric-label">Client Retention & Satisfaction</div>
-        </div>
-        <div class="metric-item">
-          <div class="metric-value">12x</div>
-          <div class="metric-label">Average Return on Ad Spend</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQs -->
-    <section class="section-padding">
-      <div class="container" style="max-width: 800px;">
-        <div class="section-header reveal-on-scroll">
-          <span class="section-label">// Got Questions?</span>
-          <h2 class="section-title">Frequently Asked Questions</h2>
-        </div>
-
-        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-          <div class="glass-panel reveal-on-scroll" style="padding: 2rem;">
-            <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--foreground);">Q1. Why should we choose PSIDO over other digital agencies in Bangalore?</h3>
-            <p style="font-size: 0.85rem; color: var(--muted); line-height: 1.6;">
-              PSIDO combines high-end visual design with deep engineering and performance marketing. We don't build generic templates; we build custom digital engines that rank aggressively, load instantly, and directly drive conversion. We are a ₹50 Lakh+ brand experience partner delivering high business ROI.
-            </p>
-          </div>
-          <div class="glass-panel reveal-on-scroll" style="padding: 2rem;">
-            <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--foreground);">Q2. How does your SEO strategy adapt to Google AI Overviews and GEO (Generative Engine Optimization)?</h3>
-            <p style="font-size: 0.85rem; color: var(--muted); line-height: 1.6;">
-              We construct our client content using semantic SEO frameworks, schema markup (FAQ, Service, Entity references), and structured Q&A content. This makes your site easily parsed by LLM crawlers like OpenAI, Gemini, and Claude, allowing your business to show as a cited authority in AI searches.
-            </p>
-          </div>
-          <div class="glass-panel reveal-on-scroll" style="padding: 2rem;">
-            <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--foreground);">Q3. How much does a PSIDO website or SEO package cost?</h3>
-            <p style="font-size: 0.85rem; color: var(--muted); line-height: 1.6;">
-              Our pricing is project-scoped based on your business goals, complexity, and required deliverables. Website projects typically start from ₹25,000 for professional business sites, while full-stack growth packages including SEO and marketing start from ₹15,000/month. We offer custom quotes with zero obligation — book a free strategy call to get your tailored proposal.
-            </p>
-          </div>
-          <div class="glass-panel reveal-on-scroll" style="padding: 2rem;">
-            <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--foreground);">Q4. How long does it take to build a website and see SEO results?</h3>
-            <p style="font-size: 0.85rem; color: var(--muted); line-height: 1.6;">
-              A professional business website is typically delivered in 7–21 working days depending on scope. For SEO, initial ranking traction is visible within 4–8 weeks, with significant ranking improvements and sustained organic traffic growth achieved within 3–6 months. We set realistic timelines from day one and track progress with transparent reporting.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── TESTIMONIALS ── -->
-    <section class="section-padding" style="background: rgba(37,99,235,0.02);">
+    <!-- ══════════════════════════════════════════════
+         SECTION 6 — PROCESS
+    ══════════════════════════════════════════════ -->
+    <section class="section" id="process">
       <div class="container">
-        <div class="section-header reveal-on-scroll">
-          <span class="section-label">// Client Voices</span>
-          <h2 class="section-title">What Our Clients Say</h2>
-          <p class="section-desc">Real feedback from real business owners who partnered with PSIDO to transform their digital presence.</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;">
+          <div class="reveal">
+            <span class="section-tag">How It Works</span>
+            <h2 class="section-title">From First Call to <span class="highlight">Live & Growing</span></h2>
+            <p class="section-desc" style="margin-bottom: 2rem;">
+              Our simple process makes it easy to get started. No complicated paperwork. Just a conversation and we handle the rest.
+            </p>
+            <img src="startup-workspace.png" alt="PSIDO Team Working on Your Project" style="border-radius: var(--radius-lg); width:100%; object-fit:cover; height:260px; border:1px solid var(--border);" loading="lazy">
+          </div>
+
+          <div class="process-timeline reveal reveal-delay-1">
+            <div class="process-step">
+              <div class="process-num">01</div>
+              <div class="process-content">
+                <h3>Free Consultation</h3>
+                <p>Call or WhatsApp us. Tell us about your business, what you need, and your budget. We'll give you honest advice — free of charge.</p>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="process-num">02</div>
+              <div class="process-content">
+                <h3>Plan & Design</h3>
+                <p>We create a design that matches your brand and business goals. You see it before we build anything and can give feedback freely.</p>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="process-num">03</div>
+              <div class="process-content">
+                <h3>Build & Review</h3>
+                <p>We build your website, app, or branding. You review everything, we make changes until it's perfect — no extra charges.</p>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="process-num">04</div>
+              <div class="process-content">
+                <h3>Launch & Go Live</h3>
+                <p>We launch your website and set up Google so customers can find you. Your business is now live online and ready for customers.</p>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="process-num">05</div>
+              <div class="process-content">
+                <h3>Grow & Support</h3>
+                <p>We monitor your growth, run your marketing campaigns, and provide ongoing support. We grow together as long-term partners.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════
+         SECTION 7 — APP SOLUTIONS
+    ══════════════════════════════════════════════ -->
+    <section class="section" id="apps" style="background: var(--bg-2);">
+      <div class="container">
+        <div class="apps-grid">
+          <div class="apps-visual reveal">
+            <img src="app-mockup.png" alt="Custom Mobile App for Small Businesses Bangalore" loading="lazy">
+            <div class="apps-tag-float pos-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              ₹250 Billing in 2 Seconds
+            </div>
+            <div class="apps-tag-float pos-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+              Real-Time Inventory
+            </div>
+          </div>
+
+          <div class="apps-content reveal reveal-delay-1">
+            <span class="section-tag">Custom Apps</span>
+            <h2 class="section-title">Apps Built for <span class="highlight-violet">Your Business</span></h2>
+            <p class="section-desc" style="margin-bottom: 2rem;">
+              Stop using complicated software made for big companies. We build simple, affordable apps made exactly for how your business works.
+            </p>
+
+            <div class="app-item">
+              <div class="app-item-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+              </div>
+              <div class="app-item-text">
+                <h4>Billing & Invoice App</h4>
+                <p>Create bills, print receipts, and track payments instantly. Perfect for clothing shops, grocery stores, and hardware shops.</p>
+              </div>
+            </div>
+
+            <div class="app-item">
+              <div class="app-item-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+              </div>
+              <div class="app-item-text">
+                <h4>Inventory Management</h4>
+                <p>Track your stock, get low-stock alerts, and manage products easily. Never run out of stock unexpectedly again.</p>
+              </div>
+            </div>
+
+            <div class="app-item">
+              <div class="app-item-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+              </div>
+              <div class="app-item-text">
+                <h4>Customer Management</h4>
+                <p>Save customer details, track orders, send reminders, and manage relationships — all from one simple app on your phone.</p>
+              </div>
+            </div>
+
+            <div class="app-item">
+              <div class="app-item-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+              </div>
+              <div class="app-item-text">
+                <h4>Order Management App</h4>
+                <p>Track every order from placement to delivery. Ideal for restaurants, bakeries, and shops that take advance orders.</p>
+              </div>
+            </div>
+
+            <a href="#contact" class="btn btn-secondary btn-lg" style="margin-top:0.5rem;">
+              Discuss Your App Idea →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════
+         SECTION 8 — BRANDING & MARKETING
+    ══════════════════════════════════════════════ -->
+    <section class="section" id="branding">
+      <div class="container">
+        <div class="branding-grid">
+          <div class="reveal">
+            <span class="section-tag">Branding & Marketing</span>
+            <h2 class="section-title">Look Like the <span class="highlight">Best Business</span> in Bangalore</h2>
+            <p class="section-desc" style="margin-bottom: 2.5rem;">
+              Your brand is how customers see you. A strong brand + smart marketing = more customers walking through your door every single day.
+            </p>
+
+            <div class="branding-cards">
+              <div class="branding-card">
+                <div class="branding-card-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                <h4>Logo Design</h4>
+                <p>A professional logo that makes your business look trustworthy and memorable.</p>
+              </div>
+              <div class="branding-card">
+                <div class="branding-card-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                </div>
+                <h4>Social Media Creatives</h4>
+                <p>Eye-catching posts and stories for Instagram and Facebook that attract customers.</p>
+              </div>
+              <div class="branding-card">
+                <div class="branding-card-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                </div>
+                <h4>Google Visibility</h4>
+                <p>Get your business on the first page of Google when locals search for your services.</p>
+              </div>
+              <div class="branding-card">
+                <div class="branding-card-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                </div>
+                <h4>Performance Ads</h4>
+                <p>Targeted Google and Instagram ads that bring real customers at a low cost.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="branding-visual reveal reveal-delay-1">
+            <img src="branding-visual.png" alt="Professional Branding Design for Bangalore Businesses" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════
+         SECTION 9 — PORTFOLIO
+    ══════════════════════════════════════════════ -->
+    <section class="section" id="portfolio" style="background: var(--bg-2);">
+      <div class="container">
+        <div class="reveal" style="text-align: center; margin-bottom: 3.5rem;">
+          <span class="section-tag">Our Work</span>
+          <h2 class="section-title">Real Results for <span class="highlight">Real Businesses</span></h2>
+          <p class="section-desc" style="margin: 0 auto; text-align: center;">
+            From local computer repair shops to restaurants and startups — see how we've helped businesses grow digitally.
+          </p>
         </div>
 
-        <div class="testimonial-grid reveal-on-scroll">
-          <div class="testimonial-card glass-panel">
-            <div class="testimonial-quote">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor" style="color: var(--primary); opacity: 0.3;"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+        <div class="portfolio-grid">
+
+          <article class="portfolio-card reveal">
+            <div class="portfolio-img">
+              <img src="powerhouse-case.png" alt="Powerhouse Computer Tech Website Design Bangalore" loading="lazy">
+              <div class="portfolio-img-overlay"></div>
             </div>
-            <p class="testimonial-text">"PSIDO delivered a truly professional website that gave our computer repair business a strong online identity. Our customers now find us on Google and we get calls directly from the website. Best investment we've made."</p>
+            <div class="portfolio-content">
+              <span class="portfolio-tag">Website + SEO</span>
+              <h3>Powerhouse Computer Tech</h3>
+              <p>Designed a professional website for Bangalore's trusted computer repair shop. Resulted in 100% increase in online visibility and customer inquiries from Google.</p>
+              <a href="https://powerhousecomputertech.in" target="_blank" rel="noopener" class="portfolio-link">
+                Visit Live Site
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="portfolio-card reveal reveal-delay-1">
+            <div class="portfolio-img">
+              <img src="website-mockup.png" alt="Restaurant Website Design Bangalore" loading="lazy">
+              <div class="portfolio-img-overlay"></div>
+            </div>
+            <div class="portfolio-content">
+              <span class="portfolio-tag" style="background: var(--secondary-dim); color: var(--secondary);">Restaurant Website</span>
+              <h3>Premium Restaurant Concept</h3>
+              <p>A beautiful online menu and ordering page for a Bangalore restaurant. Customers can view the menu, place reservations, and find the location easily.</p>
+              <a href="#contact" class="portfolio-link">
+                Build Similar Site
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="portfolio-card reveal reveal-delay-2">
+            <div class="portfolio-img">
+              <img src="startup-workspace.png" alt="Startup Digital Setup Bangalore" loading="lazy">
+              <div class="portfolio-img-overlay"></div>
+            </div>
+            <div class="portfolio-content">
+              <span class="portfolio-tag" style="background: var(--gold-dim); color: var(--gold);">Startup Package</span>
+              <h3>Complete Startup Digital Launch</h3>
+              <p>Website + branding + social media setup for a Bangalore tech startup. Launched online in 14 days with a professional look that won investor confidence.</p>
+              <a href="#contact" class="portfolio-link">
+                Start Your Startup
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════
+         SECTION 10 — TESTIMONIALS
+    ══════════════════════════════════════════════ -->
+    <section class="section" id="testimonials">
+      <div class="container">
+        <div class="reveal" style="text-align: center; margin-bottom: 3.5rem;">
+          <span class="section-tag">Testimonials</span>
+          <h2 class="section-title">What Business Owners <span class="highlight">Say About Us</span></h2>
+        </div>
+
+        <div class="testimonials-grid">
+
+          <div class="testimonial-card reveal">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">
+              "Before PSIDO, nobody could find my computer shop online. Now I get calls every day from Google. The website they built looks so professional — my customers trust me more now. Best investment for my shop."
+            </p>
             <div class="testimonial-author">
-              <div class="testimonial-avatar">RK</div>
-              <div class="testimonial-meta">
+              <div class="testimonial-avatar">R</div>
+              <div>
                 <div class="testimonial-name">Ravi Kumar</div>
                 <div class="testimonial-role">Powerhouse Computer Tech, Bangalore</div>
               </div>
             </div>
           </div>
 
-          <div class="testimonial-card glass-panel">
-            <div class="testimonial-quote">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor" style="color: var(--primary); opacity: 0.3;"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
-            </div>
-            <p class="testimonial-text">"From the very first call, the PSIDO team understood our vision. They didn't just build a website — they built a growth engine. Our organic traffic has grown consistently month after month and we're ranking for competitive keywords."</p>
+          <div class="testimonial-card reveal reveal-delay-1">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">
+              "I was worried the website would be too expensive or complicated. But PSIDO made it simple and affordable. They explained everything in simple language. My restaurant's online orders have gone up 3x since launch!"
+            </p>
             <div class="testimonial-author">
-              <div class="testimonial-avatar">AM</div>
-              <div class="testimonial-meta">
-                <div class="testimonial-name">Ananya Mehta</div>
-                <div class="testimonial-role">E-Commerce Founder, Bangalore</div>
+              <div class="testimonial-avatar" style="background: linear-gradient(135deg, var(--gold), #f59e0b);">P</div>
+              <div>
+                <div class="testimonial-name">Priya Sharma</div>
+                <div class="testimonial-role">Restaurant Owner, Koramangala</div>
               </div>
             </div>
           </div>
 
-          <div class="testimonial-card glass-panel">
-            <div class="testimonial-quote">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor" style="color: var(--primary); opacity: 0.3;"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
-            </div>
-            <p class="testimonial-text">"The level of detail in their work is unmatched. Our website is fast, beautiful, and it actually converts visitors. PSIDO handled everything from design to SEO — I didn't have to worry about a thing. Highly recommend."</p>
+          <div class="testimonial-card reveal reveal-delay-2">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">
+              "The billing app they built for my clothing store has saved me 2 hours every day. No more manual bills. My customers love getting digital receipts instantly. PSIDO truly understands small business needs."
+            </p>
             <div class="testimonial-author">
-              <div class="testimonial-avatar">SP</div>
-              <div class="testimonial-meta">
-                <div class="testimonial-name">Suresh Pillai</div>
-                <div class="testimonial-role">Healthcare Consultant, Bangalore</div>
+              <div class="testimonial-avatar" style="background: linear-gradient(135deg, var(--secondary), #a855f7);">M</div>
+              <div>
+                <div class="testimonial-name">Mohammed Irfan</div>
+                <div class="testimonial-role">Clothing Store Owner, Shivajinagar</div>
               </div>
             </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════
+         SECTION 11 — GROWTH VISUAL
+    ══════════════════════════════════════════════ -->
+    <section class="section section-sm" style="background: var(--bg-2);">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+          <div class="reveal">
+            <span class="section-tag">The Transformation</span>
+            <h2 class="section-title">See the <span class="highlight">Difference</span> We Make</h2>
+            <p class="section-desc" style="margin-bottom: 2rem;">
+              When a local business goes digital with PSIDO, everything changes. More customers. More trust. More revenue.
+            </p>
+            <a href="#contact" class="btn btn-primary btn-lg">Transform My Business →</a>
+          </div>
+          <div class="reveal reveal-delay-1">
+            <img src="growth-result.png" alt="Business Owner Happy with Digital Growth Results" style="border-radius: var(--radius-lg); width:100%; object-fit:cover; max-height:400px; border:1px solid var(--border);" loading="lazy">
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Final CTA -->
-    <section class="section-padding" style="background: radial-gradient(circle at 50% 50%, rgba(37,99,235,0.08) 0%, transparent 60%);">
-      <div class="container reveal-on-scroll" style="text-align: center; max-width: 700px; display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
-        <span class="section-label">// Let's Build Something Exceptional</span>
-        <h2 class="text-gradient font-black" style="font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1;">Ready to Redefine <br>Your Digital Growth?</h2>
-        <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.6; max-width: 500px; margin-bottom: 1rem;">
-          Partner with Bangalore's leading digital design, website development, and organic SEO authority. Let's discuss your targets and engineer a growth solution.
-        </p>
-        <div class="hero-buttons" style="flex-wrap: wrap; justify-content: center; gap: 1rem;">
-          <a href="contact.html" class="btn-premium">
-            <span>Schedule Free Strategy Call</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-          </a>
-          <a href="tel:+918870210932" class="btn-secondary">
-            <span>Call +91 8870210932</span>
-          </a>
-          <a href="tel:+916361345841" class="btn-secondary">
-            <span>Call +91 6361345841</span>
-          </a>
+    <!-- ══════════════════════════════════════════════
+         SECTION 12 — FAQ
+    ══════════════════════════════════════════════ -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="reveal" style="text-align: center; margin-bottom: 3.5rem;">
+          <span class="section-tag">Common Questions</span>
+          <h2 class="section-title">Got Questions? <span class="highlight">We Have Answers</span></h2>
+          <p class="section-desc" style="margin: 0 auto; text-align: center;">
+            Everything local business owners want to know before working with us.
+          </p>
+        </div>
+
+        <div class="faq-list">
+
+          <div class="faq-item reveal">
+            <button class="faq-question" id="faq-q1" aria-expanded="false" aria-controls="faq-a1">
+              How much does a website cost for my small business in Bangalore?
+              <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+            </button>
+            <div class="faq-answer" id="faq-a1">
+              <p class="faq-answer-inner">
+                Every business is different, so we give you a custom quote after understanding your needs. We work with all budgets and always give honest, fair pricing. Contact us for a free consultation and we'll give you a clear number with no hidden costs.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" id="faq-q2" aria-expanded="false" aria-controls="faq-a2">
+              How long will it take to build my website?
+              <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+            </button>
+            <div class="faq-answer" id="faq-a2">
+              <p class="faq-answer-inner">
+                A standard business website takes 7–14 working days. A restaurant or portfolio site takes about 1–2 weeks. E-commerce stores take 3–4 weeks. Custom apps take 4–8 weeks depending on complexity. We always give you a clear timeline before starting.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" id="faq-q3" aria-expanded="false" aria-controls="faq-a3">
+              I don't know anything about technology. Can I still work with you?
+              <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+            </button>
+            <div class="faq-answer" id="faq-a3">
+              <p class="faq-answer-inner">
+                Absolutely! We work with many business owners who have zero technical knowledge. We explain everything in simple Kannada/English, handle all the technical work, and make sure you feel comfortable at every step. All you need to do is tell us about your business.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" id="faq-q4" aria-expanded="false" aria-controls="faq-a4">
+              Will my website appear on Google search results?
+              <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+            </button>
+            <div class="faq-answer" id="faq-a4">
+              <p class="faq-answer-inner">
+                Yes! Every website we build is SEO-optimized from day one. We also set up your Google Business Profile so you appear in local search results and Google Maps. With our SEO and marketing services, we actively work to get you on the first page of Google.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" id="faq-q5" aria-expanded="false" aria-controls="faq-a5">
+              What kind of businesses do you work with?
+              <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+            </button>
+            <div class="faq-answer" id="faq-a5">
+              <p class="faq-answer-inner">
+                We work with all types of local Bangalore businesses — clothing shops, restaurants, salons, clinics, mobile stores, grocery shops, hardware stores, startups, offices, and more. If you have a business and want to grow online, we can help you.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" id="faq-q6" aria-expanded="false" aria-controls="faq-a6">
+              Do you provide support after the website is launched?
+              <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+            </button>
+            <div class="faq-answer" id="faq-a6">
+              <p class="faq-answer-inner">
+                Yes! We're always available on WhatsApp for quick support. Need to update your menu, change a phone number, or add new products? Just message us and we handle it quickly. We believe in long-term partnerships, not one-time projects.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" id="faq-q7" aria-expanded="false" aria-controls="faq-a7">
+              Can I get a custom billing or inventory app for my shop?
+              <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+            </button>
+            <div class="faq-answer" id="faq-a7">
+              <p class="faq-answer-inner">
+                Yes! We build custom apps specifically for your business's needs. Unlike expensive generic software, our apps are simple, work exactly how your business works, and are affordable. Tell us how you work and we'll build an app that makes your daily operations easier.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" id="faq-q8" aria-expanded="false" aria-controls="faq-a8">
+              How do I get started with PSIDO?
+              <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+            </button>
+            <div class="faq-answer" id="faq-a8">
+              <p class="faq-answer-inner">
+                It's very simple! Just call us at +91 8870210932 or +91 6361345841, WhatsApp us, or fill the contact form below. We'll have a free 15-minute conversation about your business, understand what you need, and tell you exactly how we can help and at what cost. No commitment needed.
+              </p>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
+
+    <!-- ══════════════════════════════════════════════
+         SECTION 13 — CONTACT
+    ══════════════════════════════════════════════ -->
+    <section class="section" id="contact" style="background: var(--bg-2);">
+      <div class="container">
+        <div class="contact-wrapper">
+
+          <div class="contact-info reveal">
+            <span class="section-tag">Get In Touch</span>
+            <h2>Ready to Grow Your<br><span style="color: var(--primary);">Business Online?</span></h2>
+            <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.75;">
+              Tell us about your business and what you need. We'll respond within a few hours with honest advice and a clear plan — completely free.
+            </p>
+
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+              </div>
+              <div class="contact-item-text">
+                <span class="contact-item-label">Call / WhatsApp (Both Primary)</span>
+                <a href="tel:+918870210932" class="contact-item-val">+91 8870210932</a>
+                <a href="tel:+916361345841" class="contact-item-val" style="margin-top:0.2rem; display:block;">+91 6361345841</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div class="contact-item-text">
+                <span class="contact-item-label">Email</span>
+                <a href="mailto:enquiry@psido.in" class="contact-item-val">enquiry@psido.in</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </div>
+              <div class="contact-item-text">
+                <span class="contact-item-label">Instagram</span>
+                <a href="https://instagram.com/psido.in" target="_blank" rel="noopener" class="contact-item-val">@psido.in</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div class="contact-item-text">
+                <span class="contact-item-label">Location</span>
+                <span class="contact-item-val">Bangalore, Karnataka — Remote Operations Across India</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-wrap reveal reveal-delay-1">
+            <span class="section-tag">Send Us a Message</span>
+            <h3 style="font-family: var(--font-head); font-size: 1.5rem; font-weight: 800; color: var(--fg); margin: 0.75rem 0 1.5rem;">Tell Us About Your Business</h3>
+            <form id="contact-form" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="contact-name">Your Name</label>
+                  <input type="text" id="contact-name" name="name" class="form-control" placeholder="Eg. Ravi Kumar" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="contact-phone">Phone Number</label>
+                  <input type="tel" id="contact-phone" name="phone" class="form-control" placeholder="+91 XXXXX XXXXX" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contact-business">Business Name & Type</label>
+                <input type="text" id="contact-business" name="business" class="form-control" placeholder="Eg. Ravi's Clothing Store, Koramangala">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contact-service">What Do You Need?</label>
+                <select id="contact-service" name="service" class="form-control">
+                  <option value="Website Design">Website Design & Development</option>
+                  <option value="Mobile App">Custom Mobile App</option>
+                  <option value="Branding">Branding & Logo Design</option>
+                  <option value="Digital Marketing">Digital Marketing & Ads</option>
+                  <option value="Startup Package">Complete Startup Package</option>
+                  <option value="Not Sure">Not Sure — Need Advice</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contact-message">Anything Else?</label>
+                <textarea id="contact-message" name="message" class="form-control" rows="4" placeholder="Tell us a bit about your business and what you're looking for..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-lg" style="width:100%; justify-content:center;">
+                Send Message via WhatsApp
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="color:#09090f"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              </button>
+              <p style="font-size:0.78rem; color:var(--muted); text-align:center; margin-top:0.75rem;">
+                We respond within a few hours • Free consultation • No commitment
+              </p>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <!-- Floating WhatsApp -->
-  <div class="whatsapp-float">
-    <a href="https://wa.me/918870210932?text=Hello%20PSIDO!%20I%20would%20like%20to%20discuss%20website%20development%20and%20digital%20marketing%20services." target="_blank" class="whatsapp-link">
-      <span class="pulse-ring"></span>
-      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-    </a>
-  </div>
-
-  <!-- Footer -->
+  <!-- ── FOOTER ── -->
   <footer class="footer">
-    <div class="footer-grid">
-      <div class="footer-col">
-        <a href="index.html" class="logo-link">
-          <img src="psido-logo.png" alt="PSIDO Wolf Logo" class="logo-img">
-          <span class="logo-text">PSIDO</span>
-        </a>
-        <p>Where Design, Technology, AI & Marketing Meet Innovation. We build award-winning digital experiences that drive exponential business growth.</p>
-      </div>
+    <div class="container">
+      <div class="footer-grid">
 
-      <div class="footer-col">
-        <h3>Services</h3>
-        <ul class="footer-links">
-          <li><a href="services.html">Website Development</a></li>
-          <li><a href="services.html">SEO Services</a></li>
-          <li><a href="services.html">Digital Marketing</a></li>
-          <li><a href="services.html">Branding & Design</a></li>
-        </ul>
-      </div>
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="psido-logo.png" alt="PSIDO Logo" width="32" height="32" loading="lazy">
+            PSID<span>O</span>
+          </div>
+          <p class="footer-tagline">
+            Helping Bangalore local businesses grow digitally. Professional websites, mobile apps, branding, and digital marketing at honest prices.
+          </p>
+          <div class="footer-social">
+            <a href="https://instagram.com/psido.in" target="_blank" rel="noopener" class="footer-social-link" aria-label="PSIDO Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="https://wa.me/918870210932" target="_blank" rel="noopener" class="footer-social-link" aria-label="PSIDO WhatsApp">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </a>
+            <a href="mailto:enquiry@psido.in" class="footer-social-link" aria-label="PSIDO Email">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </a>
+          </div>
+        </div>
 
-      <div class="footer-col">
-        <h3>Company</h3>
-        <ul class="footer-links">
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="portfolio.html">Case Studies</a></li>
-          <li><a href="industries.html">Industries</a></li>
-          <li><a href="blog.html">Blog & Insights</a></li>
-        </ul>
-      </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="#services">Website Design</a></li>
+            <li><a href="#apps">App Development</a></li>
+            <li><a href="#branding">Branding & Logo</a></li>
+            <li><a href="#branding">Digital Marketing</a></li>
+            <li><a href="#services">Startup Package</a></li>
+            <li><a href="#services">E-Commerce Store</a></li>
+          </ul>
+        </div>
 
-      <div class="footer-col">
-        <h3>Bangalore Operations</h3>
-        <ul class="footer-contact">
-          <li>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-            <span>PSIDO, Bangalore, Karnataka, India (Remote Operations)</span>
-          </li>
-          <li>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-            <div style="display: flex; flex-direction: column; gap: 0.25rem;">
-              <a href="tel:+918870210932" style="color: inherit; text-decoration: none;">+91 8870210932</a>
-              <a href="tel:+916361345841" style="color: inherit; text-decoration: none;">+91 6361345841</a>
-            </div>
-          </li>
-        </ul>
+        <div class="footer-col">
+          <h4>Industries</h4>
+          <ul class="footer-links">
+            <li><a href="#contact">Clothing Shops</a></li>
+            <li><a href="#contact">Restaurants</a></li>
+            <li><a href="#contact">Salons & Spas</a></li>
+            <li><a href="#contact">Clinics & Hospitals</a></li>
+            <li><a href="#contact">Mobile Stores</a></li>
+            <li><a href="#contact">Grocery & General Stores</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="footer-links">
+            <li><a href="tel:+918870210932">+91 8870210932</a></li>
+            <li><a href="tel:+916361345841">+91 6361345841</a></li>
+            <li><a href="mailto:enquiry@psido.in">enquiry@psido.in</a></li>
+            <li><a href="https://instagram.com/psido.in" target="_blank" rel="noopener">@psido.in</a></li>
+            <li><a href="https://wa.me/918870210932">WhatsApp Us</a></li>
+          </ul>
+        </div>
+
       </div>
     </div>
 
     <div class="footer-seo-strip">
-      <p>Top Digital Marketing Agency Bangalore • Best Website Development Company Bangalore • Enterprise UI/UX Design India • Local SEO Services Bangalore • E-Commerce Solutions Bangalore • AI Automation Company Bangalore • Lead Generation Company Bangalore</p>
+      <div class="container">
+        <p>Website Design Bangalore • Web Development Company Bangalore • App Development Bangalore • Digital Marketing Bangalore • Branding Bangalore • SEO Company Bangalore • E-Commerce Website Bangalore • Business Website Bangalore • Local Business Marketing Bangalore • Startup Website Bangalore</p>
+      </div>
     </div>
 
-    <div class="footer-bottom">
-      <p>© 2026 PSIDO. All rights reserved. Registered in Bangalore, Karnataka.</p>
-      <div class="footer-bottom-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2026 PSIDO. All rights reserved. Serving Bangalore businesses with pride.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
       </div>
     </div>
   </footer>
 
-  <!-- Custom App Script -->
-  <!-- Three.js CDN -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
-
